@@ -6,25 +6,26 @@ import LangSwitcher from '../LangSwitcher/LangSwitcher';
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const isScrolled = isMobile ? true : scrolled;
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setMenuOpen(false);
+      setIsMobile(window.innerWidth < 768);
     };
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    if (isMobile) return;
+
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMobile]);
 
   const navLinks = [
     { to: '/',        label: t('nav.home') },
@@ -35,10 +36,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+      <header className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
-          <Link to="/" className={styles.logo} onClick={closeMenu}>
+          <Link to="/" className={styles.logo}>
             <span className={styles.logoMt}>MT</span>
             <span className={styles.logoText}>Projekt&nbsp;MT</span>
           </Link>
@@ -65,70 +66,42 @@ export default function Navbar() {
           {/* Lang switcher + CTA */}
           <div className={styles.navActions}>
             <LangSwitcher />
-            <Link to="/kontakt" className={`btn btn-primary ${styles.ctaBtn}`} onClick={closeMenu}>
+            <Link to="/kontakt" className={`btn btn-primary ${styles.ctaBtn}`}>
               {t('nav.cta')}
             </Link>
           </div>
-
-          {/* Hamburger button */}
-          <button
-            className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
-            onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label={menuOpen ? 'Zatvori meni' : 'Otvori meni'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-          >
-            <span className={styles.bar} />
-            <span className={styles.bar} />
-            <span className={styles.bar} />
-          </button>
+          {isMobile && (
+            <div className={styles.mobileTopActions}>
+              <LangSwitcher />
+              <Link to="/kontakt" className={`btn btn-primary ${styles.mobileTopCta}`}>
+                {t('nav.cta')}
+              </Link>
+            </div>
+          )}
         </div>
-      </header>
 
-      {/* Mobile menu overlay */}
-      <div
-        id="mobile-menu"
-        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}
-        aria-hidden={!menuOpen}
-      >
-        <nav aria-label="Mobilna navigacija">
-          <div className={styles.mobileLang}>
-            <LangSwitcher />
+        {isMobile && (
+          <div className={styles.mobileInlineNav}>
+            <div className="container">
+              <ul className={styles.mobileInlineList}>
+                {navLinks.map(({ to, label }) => (
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      end={to === '/'}
+                      className={({ isActive }) =>
+                        `${styles.mobileInlineLink} ${isActive ? styles.active : ''}`
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <ul className={styles.mobileNavList}>
-            {navLinks.map(({ to, label }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    `${styles.mobileNavLink} ${isActive ? styles.active : ''}`
-                  }
-                  onClick={closeMenu}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-          <Link
-            to="/kontakt"
-            className={`btn btn-primary ${styles.mobileCta}`}
-            onClick={closeMenu}
-          >
-            {t('nav.cta')}
-          </Link>
-        </nav>
-      </div>
-
-      {/* Backdrop */}
-      {menuOpen && (
-        <div
-          className={styles.backdrop}
-          onClick={closeMenu}
-          aria-hidden="true"
-        />
-      )}
+        )}
+      </header>
     </>
   );
 }

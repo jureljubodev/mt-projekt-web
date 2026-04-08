@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './LangSwitcher.module.css';
+import { ensureLanguageResources } from '../../i18n';
 
 const LANGUAGES = [
   { code: 'hr', label: 'Hrvatski',    flag: '🇭🇷' },
@@ -21,7 +22,8 @@ export default function LangSwitcher() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const current = LANGUAGES.find(l => l.code === i18n.language) ?? LANGUAGES[0];
+  const currentCode = (i18n.resolvedLanguage || i18n.language || 'hr').toLowerCase().split('-')[0];
+  const current = LANGUAGES.find(l => l.code === currentCode) ?? LANGUAGES[0];
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -33,8 +35,9 @@ export default function LangSwitcher() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  function select(code: string) {
-    i18n.changeLanguage(code);
+  async function select(code: string) {
+    await ensureLanguageResources(code);
+    await i18n.changeLanguage(code);
     setOpen(false);
   }
 
@@ -58,8 +61,8 @@ export default function LangSwitcher() {
             <li
               key={lang.code}
               role="option"
-              aria-selected={lang.code === i18n.language}
-              className={`${styles.option} ${lang.code === i18n.language ? styles.active : ''}`}
+              aria-selected={lang.code === currentCode}
+              className={`${styles.option} ${lang.code === currentCode ? styles.active : ''}`}
               onClick={() => select(lang.code)}
             >
               <span className={styles.flag}>{lang.flag}</span>

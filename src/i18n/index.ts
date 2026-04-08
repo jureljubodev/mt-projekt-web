@@ -3,16 +3,29 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import hr from './locales/hr.json';
-import en from './locales/en.json';
-import de from './locales/de.json';
-import fr from './locales/fr.json';
-import it from './locales/it.json';
-import es from './locales/es.json';
-import cs from './locales/cs.json';
-import sl from './locales/sl.json';
-import sk from './locales/sk.json';
-import uk from './locales/uk.json';
-import hu from './locales/hu.json';
+
+const SUPPORTED_LANGS = ['hr', 'en', 'de', 'fr', 'it', 'es', 'cs', 'sl', 'sk', 'uk', 'hu'] as const;
+type SupportedLang = (typeof SUPPORTED_LANGS)[number];
+
+const localeLoaders = import.meta.glob<{ default: Record<string, unknown> }>('./locales/*.json');
+
+function normalizeLang(code?: string): SupportedLang {
+  const base = (code ?? 'hr').toLowerCase().split('-')[0] as SupportedLang;
+  return (SUPPORTED_LANGS as readonly string[]).includes(base) ? base : 'hr';
+}
+
+export async function ensureLanguageResources(code?: string) {
+  const lang = normalizeLang(code);
+  if (i18n.hasResourceBundle(lang, 'translation')) return lang;
+
+  const key = `./locales/${lang}.json`;
+  const loader = localeLoaders[key];
+  if (!loader) return 'hr';
+
+  const module = await loader();
+  i18n.addResourceBundle(lang, 'translation', module.default, true, true);
+  return lang;
+}
 
 i18n
   .use(LanguageDetector)
@@ -20,18 +33,10 @@ i18n
   .init({
     resources: {
       hr: { translation: hr },
-      en: { translation: en },
-      de: { translation: de },
-      fr: { translation: fr },
-      it: { translation: it },
-      es: { translation: es },
-      cs: { translation: cs },
-      sl: { translation: sl },
-      sk: { translation: sk },
-      uk: { translation: uk },
-      hu: { translation: hu },
     },
     fallbackLng: 'hr',
+    supportedLngs: SUPPORTED_LANGS as unknown as string[],
+    nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false,
     },
@@ -39,6 +44,15 @@ i18n
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
+    load: 'languageOnly',
   });
+
+void (async () => {
+  const active = normalizeLang(i18n.resolvedLanguage || i18n.language);
+  if (active !== 'hr') {
+    await ensureLanguageResources(active);
+    await i18n.changeLanguage(active);
+  }
+})();
 
 export default i18n;

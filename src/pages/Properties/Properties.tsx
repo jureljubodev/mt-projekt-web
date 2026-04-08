@@ -18,6 +18,16 @@ interface Project {
 
 export default function Properties() {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const [availableLimit, setAvailableLimit] = useState(6);
+  const [soldLimit, setSoldLimit] = useState(6);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
   const projects: Project[] = PROJECTS_CATALOG.map((p) => ({
     id: p.id,
     slug: p.slug,
@@ -31,6 +41,8 @@ export default function Properties() {
 
   const available = projects.filter((p) => p.status === 'available');
   const sold = projects.filter((p) => p.status === 'sold');
+  const visibleAvailable = isMobile ? available.slice(0, availableLimit) : available;
+  const visibleSold = isMobile ? sold.slice(0, soldLimit) : sold;
 
   const pageTitle = `${t('properties.heading')} | Projekt MT`;
   const pageDescription = t('properties.description');
@@ -67,10 +79,17 @@ export default function Properties() {
           <div className="container">
             <h2 className={styles.subheading}>{t('properties.availableHeading')}</h2>
             <div className={styles.grid}>
-              {available.map((project) => (
+              {visibleAvailable.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>
+            {isMobile && availableLimit < available.length && (
+              <div className={styles.loadMoreWrap}>
+                <button type="button" className="btn btn-outline-dark" onClick={() => setAvailableLimit((v) => v + 6)}>
+                  {t('common.loadMore', { defaultValue: 'Load More' })}
+                </button>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -81,10 +100,17 @@ export default function Properties() {
           <div className="container">
             <h2 className={styles.subheading}>{t('properties.soldHeading')}</h2>
             <div className={styles.grid}>
-              {sold.map((project) => (
+              {visibleSold.map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>
+            {isMobile && soldLimit < sold.length && (
+              <div className={styles.loadMoreWrap}>
+                <button type="button" className="btn btn-outline-dark" onClick={() => setSoldLimit((v) => v + 6)}>
+                  {t('common.loadMore', { defaultValue: 'Load More' })}
+                </button>
+              </div>
+            )}
           </div>
         </section>
       )}

@@ -1,25 +1,29 @@
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
-import Home from './pages/Home/Home';
-import Properties from './pages/Properties/Properties';
-import About from './pages/About/About';
-import Contact from './pages/Contact/Contact';
-import NotFound from './pages/NotFound/NotFound';
-import ProjectPage from './pages/ProjectPage/ProjectPage';
+
+const Home = lazy(() => import('./pages/Home/Home'));
+const Properties = lazy(() => import('./pages/Properties/Properties'));
+const About = lazy(() => import('./pages/About/About'));
+const Contact = lazy(() => import('./pages/Contact/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+const ProjectPage = lazy(() => import('./pages/ProjectPage/ProjectPage'));
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="ponuda" element={<Properties />} />
-          <Route path="ponuda/:slug" element={<ProjectPage />} />
-          <Route path="o-nama" element={<About />} />
-          <Route path="kontakt" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="ponuda" element={<Properties />} />
+            <Route path="ponuda/:slug" element={<ProjectPage />} />
+            <Route path="o-nama" element={<About />} />
+            <Route path="kontakt" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

@@ -374,6 +374,54 @@
 
 /* ── Responsive ── */
 @media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+    background: linear-gradient(170deg, #0f1b2d 0%, #1c2e45 100%);
+  }
+
+  .heroOverlay,
+  .heroBg,
+  .heroScroll {
+    display: none;
+  }
+
+  .heroContent {
+    padding-top: 6.2rem;
+    padding-bottom: 3rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 8vw, 2.65rem);
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .heroSubtitle {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.55;
+  }
+
+  .heroBg,
+  .heroTitle,
+  .heroSubtitle,
+  .heroActions,
+  .heroLabel,
+  .heroScroll span {
+    animation: none;
+  }
+
+  .projectCard,
+  .cardImagePlaceholder,
+  .cardImage,
+  .aboutVisual {
+    transition: none;
+  }
+
+  .sold {
+    backdrop-filter: none;
+  }
+
   .statsList {
     grid-template-columns: repeat(2, 1fr);
   }

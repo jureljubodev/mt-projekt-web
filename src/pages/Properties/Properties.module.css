@@ -172,8 +172,18 @@
   border-color: var(--pm-gold-dark);
 }
 
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
 /* ── Responsive ── */
 @media (max-width: 767px) {
+  .badgeSold {
+    backdrop-filter: none;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }

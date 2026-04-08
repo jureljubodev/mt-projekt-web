@@ -36,12 +36,12 @@ export default function Layout() {
     <div className={styles.layout}>
       <Navbar />
       <main className={styles.main}>
+        <CookieBanner onOpenPolicy={setActivePolicy} />
         <div key={`${location.pathname}${location.hash}`} className={styles.routeContent}>
           <Outlet />
         </div>
       </main>
       <Footer onOpenPolicy={setActivePolicy} />
-      <CookieBanner onOpenPolicy={setActivePolicy} />
       <LegalModals activePolicy={activePolicy} onClose={() => setActivePolicy(null)} />
     </div>
   );

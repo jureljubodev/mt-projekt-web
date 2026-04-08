@@ -122,6 +122,22 @@
   padding: 0.55rem 1.25rem !important;
 }
 
+.mobileTopActions {
+  display: none;
+}
+
+.mobileInlineNav {
+  display: none;
+}
+
+.mobileInlineList {
+  list-style: none;
+}
+
+.mobileInlineLink {
+  text-decoration: none;
+}
+
 /* ── Hamburger ── */
 .hamburger {
   display: none;
@@ -175,17 +191,12 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.mobileMenuOpen {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: all;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+  contain: layout paint style;
+  will-change: transform, opacity;
+  animation: mobileMenuEnter 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .mobileNavList {
@@ -232,26 +243,69 @@
   margin-top: 0.5rem;
 }
 
-/* Backdrop */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 800;
-  background-color: rgba(0, 0, 0, 0.5);
+@keyframes mobileMenuEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* ── Responsive ── */
 @media (max-width: 767px) {
+  .navbar {
+    position: sticky;
+    transition: none;
+    background-color: var(--pm-navy);
+    padding-block: 0.9rem;
+  }
+
   .desktopNav {
     display: none;
   }
   .navActions {
     display: none;
   }
-  .mobileLang {
+
+  .mobileTopActions {
     display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
-  .hamburger {
-    display: flex;
+
+  .mobileTopCta {
+    font-size: 0.68rem !important;
+    padding: 0.45rem 0.7rem !important;
+  }
+
+  .mobileInlineNav {
+    display: block;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 0.65rem;
+    padding-top: 0.65rem;
+    padding-bottom: 0.2rem;
+    background: var(--pm-navy);
+  }
+
+  .mobileInlineList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem 0.6rem;
+  }
+
+  .mobileInlineLink {
+    display: block;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.82);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobileInlineLink.active {
+    color: var(--pm-gold);
   }
 }

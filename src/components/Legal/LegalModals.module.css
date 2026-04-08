@@ -55,3 +55,9 @@
   font-size: 0.96rem;
   line-height: 1.7;
 }
+
+@media (max-width: 767px) {
+  .overlay {
+    backdrop-filter: none;
+  }
+}

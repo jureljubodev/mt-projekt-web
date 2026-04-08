@@ -9,8 +9,17 @@ import Seo from '../../components/Seo/Seo';
 
 export default function Home() {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
-  const featuredProjects = PROJECTS_CATALOG.filter((project) => project.featured).slice(0, 4);
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const featuredProjects = PROJECTS_CATALOG
+    .filter((project) => project.featured)
+    .slice(0, isMobile ? 2 : 4);
   const [featuredImages, setFeaturedImages] = useState<Record<string, string | null>>({});
 
   useEffect(() => {
@@ -81,13 +90,17 @@ export default function Home() {
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
-        <img
-          src={landingImg}
-          alt={t('home.heroLabel')}
-          className={styles.heroBg}
-          fetchPriority="high"
-        />
-        <div className={styles.heroOverlay} />
+        {!isMobile && (
+          <>
+            <img
+              src={landingImg}
+              alt={t('home.heroLabel')}
+              className={styles.heroBg}
+              fetchPriority="high"
+            />
+            <div className={styles.heroOverlay} />
+          </>
+        )}
         <div className={`container ${styles.heroContent}`}>
           <span className={`section-label ${styles.heroLabel}`}>{t('home.heroLabel')}</span>
           <h1 className={styles.heroTitle}>
@@ -104,9 +117,11 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className={styles.heroScroll} aria-hidden="true">
-          <span />
-        </div>
+        {!isMobile && (
+          <div className={styles.heroScroll} aria-hidden="true">
+            <span />
+          </div>
+        )}
       </section>
 
       {/* ── Stats ── */}

@@ -31,3 +31,9 @@
     animation: none;
   }
 }
+
+@media (max-width: 767px) {
+  .routeContent {
+    animation: none;
+  }
+}

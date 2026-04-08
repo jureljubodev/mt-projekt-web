@@ -8,6 +8,8 @@ interface FooterProps {
   onOpenPolicy: (policy: LegalPolicyType) => void;
 }
 
+const BUILD_MARK = 'build-2026-04-08-2';
+
 export default function Footer({ onOpenPolicy }: FooterProps) {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
@@ -59,9 +61,12 @@ export default function Footer({ onOpenPolicy }: FooterProps) {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>
+          <div className={styles.bottomMeta}>
+            <p>
             &copy; {year} {t('common.copyright')}
-          </p>
+            </p>
+            <p className={styles.buildMark}>{BUILD_MARK}</p>
+          </div>
           <div className={styles.legalLinks}>
             <button type="button" onClick={() => onOpenPolicy('privacy')} className={styles.legalBtn}>
               {t('legal.privacyTitle', { defaultValue: 'Privacy Policy' })}
