@@ -24,7 +24,11 @@ export default function CookieBanner({ onOpenPolicy }: CookieBannerProps) {
   });
 
   const saveChoice = (choice: CookieChoice) => {
-    window.localStorage.setItem(COOKIE_KEY, choice);
+    try {
+      window.localStorage.setItem(COOKIE_KEY, choice);
+    } catch {
+      // If storage is blocked (e.g. strict/private browser mode), still allow dismissing the banner.
+    }
     setIsVisible(false);
   };
 

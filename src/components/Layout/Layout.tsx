@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
@@ -11,6 +11,12 @@ export default function Layout() {
   const [activePolicy, setActivePolicy] = useState<LegalPolicyType | null>(null);
   const location = useLocation();
   const safeMode = useSafeMode();
+  const handleOpenPolicy = useCallback((policy: LegalPolicyType) => {
+    setActivePolicy(policy);
+  }, []);
+  const handleClosePolicy = useCallback(() => {
+    setActivePolicy(null);
+  }, []);
 
   useEffect(() => {
     document.body.setAttribute('data-safe-mode', safeMode ? '1' : '0');
@@ -61,9 +67,9 @@ export default function Layout() {
           <Outlet />
         </div>
       </main>
-      <Footer onOpenPolicy={setActivePolicy} />
-      <CookieBanner onOpenPolicy={setActivePolicy} />
-      <LegalModals activePolicy={activePolicy} onClose={() => setActivePolicy(null)} />
+      <Footer onOpenPolicy={handleOpenPolicy} />
+      <CookieBanner onOpenPolicy={handleOpenPolicy} />
+      <LegalModals activePolicy={activePolicy} onClose={handleClosePolicy} />
     </div>
   );
 }

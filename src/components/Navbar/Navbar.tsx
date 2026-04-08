@@ -74,6 +74,7 @@ export default function Navbar() {
 
           {!safeMode && (
             <button
+              type="button"
               className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? 'Zatvori meni' : 'Otvori meni'}
