@@ -6,10 +6,19 @@ import CookieBanner from '../Legal/CookieBanner';
 import LegalModals, { type LegalPolicyType } from '../Legal/LegalModals';
 import styles from './Layout.module.css';
 import { useEffect } from 'react';
+import { useSafeMode } from '../../utils/safeMode';
 
 export default function Layout() {
   const [activePolicy, setActivePolicy] = useState<LegalPolicyType | null>(null);
   const location = useLocation();
+  const safeMode = useSafeMode();
+
+  useEffect(() => {
+    document.body.setAttribute('data-safe-mode', safeMode ? '1' : '0');
+    return () => {
+      document.body.removeAttribute('data-safe-mode');
+    };
+  }, [safeMode]);
 
   useEffect(() => {
     const frameId = window.requestAnimationFrame(() => {

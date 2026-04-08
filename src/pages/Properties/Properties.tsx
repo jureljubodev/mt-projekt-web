@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { PROJECTS_CATALOG, loadProjectThumbnailImage, type ProjectCatalogItem, type ProjectStatus } from '../../data/projectsCatalog';
 import Seo from '../../components/Seo/Seo';
+import { useSafeMode } from '../../utils/safeMode';
 
 interface Project {
   id: string;
@@ -18,9 +19,10 @@ interface Project {
 
 export default function Properties() {
   const { t } = useTranslation();
+  const safeMode = useSafeMode();
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  const [availableLimit, setAvailableLimit] = useState(6);
-  const [soldLimit, setSoldLimit] = useState(6);
+  const [availableLimit, setAvailableLimit] = useState(4);
+  const [soldLimit, setSoldLimit] = useState(4);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
@@ -41,8 +43,8 @@ export default function Properties() {
 
   const available = projects.filter((p) => p.status === 'available');
   const sold = projects.filter((p) => p.status === 'sold');
-  const visibleAvailable = isMobile ? available.slice(0, availableLimit) : available;
-  const visibleSold = isMobile ? sold.slice(0, soldLimit) : sold;
+  const visibleAvailable = (isMobile || safeMode) ? available.slice(0, availableLimit) : available;
+  const visibleSold = (isMobile || safeMode) ? sold.slice(0, soldLimit) : sold;
 
   const pageTitle = `${t('properties.heading')} | Projekt MT`;
   const pageDescription = t('properties.description');
@@ -80,10 +82,10 @@ export default function Properties() {
             <h2 className={styles.subheading}>{t('properties.availableHeading')}</h2>
             <div className={styles.grid}>
               {visibleAvailable.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard key={project.id} project={project} safeMode={safeMode} />
               ))}
             </div>
-            {isMobile && availableLimit < available.length && (
+            {(isMobile || safeMode) && availableLimit < available.length && (
               <div className={styles.loadMoreWrap}>
                 <button type="button" className="btn btn-outline-dark" onClick={() => setAvailableLimit((v) => v + 6)}>
                   {t('common.loadMore', { defaultValue: 'Load More' })}
@@ -101,10 +103,10 @@ export default function Properties() {
             <h2 className={styles.subheading}>{t('properties.soldHeading')}</h2>
             <div className={styles.grid}>
               {visibleSold.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard key={project.id} project={project} safeMode={safeMode} />
               ))}
             </div>
-            {isMobile && soldLimit < sold.length && (
+            {(isMobile || safeMode) && soldLimit < sold.length && (
               <div className={styles.loadMoreWrap}>
                 <button type="button" className="btn btn-outline-dark" onClick={() => setSoldLimit((v) => v + 6)}>
                   {t('common.loadMore', { defaultValue: 'Load More' })}
@@ -118,11 +120,13 @@ export default function Properties() {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, safeMode }: { project: Project; safeMode: boolean }) {
   const { t } = useTranslation();
   const [coverImage, setCoverImage] = useState<string | null>(null);
 
   useEffect(() => {
+    if (safeMode) return;
+
     let cancelled = false;
     loadProjectThumbnailImage(project.catalogItem).then((img) => {
       if (!cancelled) setCoverImage(img);
@@ -130,7 +134,7 @@ function ProjectCard({ project }: { project: Project }) {
     return () => {
       cancelled = true;
     };
-  }, [project.catalogItem]);
+  }, [project.catalogItem, safeMode]);
 
   return (
     <article className={`${styles.card} ${project.status === 'sold' ? styles.cardSold : ''}`}>

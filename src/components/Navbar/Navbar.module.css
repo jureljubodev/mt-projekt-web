@@ -122,6 +122,37 @@
   padding: 0.55rem 1.25rem !important;
 }
 
+.safeMode {
+  position: sticky;
+  background-color: var(--pm-navy);
+}
+
+.safeNavRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--pm-navy);
+}
+
+.safeNavList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 0.75rem;
+  padding: 0.7rem 0 0.75rem;
+}
+
+.safeNavLink {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0;
+}
+
+.safeNavLink.active {
+  color: var(--pm-gold);
+}
+
 /* ── Hamburger ── */
 .hamburger {
   display: none;
@@ -226,5 +257,9 @@
 
   .hamburger {
     display: flex;
+  }
+
+  .safeMode .hamburger {
+    display: none;
   }
 }

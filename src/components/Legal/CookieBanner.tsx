@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { LegalPolicyType } from './LegalModals';
 import styles from './CookieBanner.module.css';
+import { useSafeMode } from '../../utils/safeMode';
 
 interface CookieBannerProps {
   onOpenPolicy: (policy: LegalPolicyType) => void;
@@ -13,6 +14,7 @@ const COOKIE_KEY = 'pm_cookie_consent';
 
 export default function CookieBanner({ onOpenPolicy }: CookieBannerProps) {
   const { t } = useTranslation();
+  const safeMode = useSafeMode();
   const [isVisible, setIsVisible] = useState<boolean>(() => {
     if (typeof window === 'undefined') {
       return false;
@@ -31,7 +33,7 @@ export default function CookieBanner({ onOpenPolicy }: CookieBannerProps) {
   }
 
   return (
-    <aside className={styles.banner} role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <aside className={`${styles.banner} ${safeMode ? styles.safe : ''}`} role="dialog" aria-live="polite" aria-label="Cookie consent">
       <div className={styles.inner}>
         <div className={styles.textWrap}>
           <strong className={styles.title}>

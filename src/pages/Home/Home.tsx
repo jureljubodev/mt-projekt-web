@@ -6,9 +6,11 @@ import landingImg from '../../assets/images/landingImg.jpg';
 import aboutCraftVisual from '../../assets/images/about-craft-visual.svg';
 import { PROJECTS_CATALOG, loadProjectThumbnailImage } from '../../data/projectsCatalog';
 import Seo from '../../components/Seo/Seo';
+import { useSafeMode } from '../../utils/safeMode';
 
 export default function Home() {
   const { t } = useTranslation();
+  const safeMode = useSafeMode();
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
   useEffect(() => {
@@ -19,10 +21,12 @@ export default function Home() {
 
   const featuredProjects = PROJECTS_CATALOG
     .filter((project) => project.featured)
-    .slice(0, isMobile ? 2 : 4);
+    .slice(0, safeMode ? 1 : isMobile ? 2 : 4);
   const [featuredImages, setFeaturedImages] = useState<Record<string, string | null>>({});
 
   useEffect(() => {
+    if (safeMode) return;
+
     let cancelled = false;
 
     Promise.all(
@@ -40,7 +44,7 @@ export default function Home() {
     return () => {
       cancelled = true;
     };
-  }, [featuredProjects]);
+  }, [featuredProjects, safeMode]);
 
   const stats = [
     { value: '20+', label: t('home.stat1') },
@@ -90,7 +94,7 @@ export default function Home() {
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
-        {!isMobile && (
+        {!isMobile && !safeMode && (
           <>
             <img
               src={landingImg}
@@ -117,7 +121,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {!isMobile && (
+        {!isMobile && !safeMode && (
           <div className={styles.heroScroll} aria-hidden="true">
             <span />
           </div>
@@ -143,13 +147,15 @@ export default function Home() {
         <div className={`container ${styles.aboutGrid}`}>
           <div className={styles.aboutImage}>
             <div className={styles.imagePlaceholder}>
-              <img
-                src={aboutCraftVisual}
-                alt={t('home.aboutHeading')}
-                className={styles.aboutVisual}
-                loading="lazy"
-                decoding="async"
-              />
+              {!safeMode && (
+                <img
+                  src={aboutCraftVisual}
+                  alt={t('home.aboutHeading')}
+                  className={styles.aboutVisual}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
             </div>
           </div>
           <div className={styles.aboutText}>
@@ -183,7 +189,7 @@ export default function Home() {
             {featuredProjects.map((project) => (
               <article key={project.id} className={styles.projectCard}>
                 <div className={styles.cardImageWrap}>
-                  {featuredImages[project.id] ? (
+                  {!safeMode && featuredImages[project.id] ? (
                     <img
                       src={featuredImages[project.id] ?? undefined}
                       alt={t(`projects.${project.id}.title`)}

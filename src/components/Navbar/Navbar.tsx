@@ -3,9 +3,11 @@ import { NavLink, Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { useTranslation } from 'react-i18next';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
+import { useSafeMode } from '../../utils/safeMode';
 
 export default function Navbar() {
   const { t } = useTranslation();
+  const safeMode = useSafeMode();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -37,7 +39,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+      <header className={`${styles.navbar} ${scrolled || safeMode ? styles.scrolled : ''} ${safeMode ? styles.safeMode : ''}`}>
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
           <Link to="/" className={styles.logo} onClick={closeMenu}>
@@ -72,20 +74,22 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button
-            className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label={menuOpen ? 'Zatvori meni' : 'Otvori meni'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-menu"
-          >
-            <span className={styles.bar} />
-            <span className={styles.bar} />
-            <span className={styles.bar} />
-          </button>
+          {!safeMode && (
+            <button
+              className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label={menuOpen ? 'Zatvori meni' : 'Otvori meni'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+            >
+              <span className={styles.bar} />
+              <span className={styles.bar} />
+              <span className={styles.bar} />
+            </button>
+          )}
         </div>
 
-        {menuOpen && (
+        {!safeMode && menuOpen && (
           <div id="mobile-menu" className={styles.mobileMenu}>
             <div className="container">
               <div className={styles.mobileLang}>
@@ -110,6 +114,26 @@ export default function Navbar() {
               <Link to="/kontakt" className={`btn btn-primary ${styles.mobileCta}`} onClick={closeMenu}>
                 {t('nav.cta')}
               </Link>
+            </div>
+          </div>
+        )}
+
+        {safeMode && (
+          <div className={styles.safeNavRow}>
+            <div className="container">
+              <ul className={styles.safeNavList}>
+                {navLinks.map(({ to, label }) => (
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      end={to === '/'}
+                      className={({ isActive }) => `${styles.safeNavLink} ${isActive ? styles.active : ''}`}
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         )}

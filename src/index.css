@@ -228,3 +228,16 @@ button {
     box-shadow: none;
   }
 }
+
+body[data-safe-mode='1'] *,
+body[data-safe-mode='1'] *::before,
+body[data-safe-mode='1'] *::after {
+  animation: none !important;
+  transition: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+body[data-safe-mode='1'] {
+  scroll-behavior: auto;
+}
