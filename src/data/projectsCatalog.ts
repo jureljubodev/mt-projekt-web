@@ -59,6 +59,9 @@ const THUMBNAIL_STEM_OVERRIDE_BY_PROJECT: Partial<Record<ProjectCatalogItem['id'
   selce2: 'apartmani-selce-224',
 };
 
+// Demo mode cap: keep one thumbnail and only a few additional images per project.
+const DEMO_PROJECT_IMAGE_LIMIT = 4;
+
 function detectCategory(filePath: string): GalleryCategory {
   const lower = filePath.toLowerCase();
 
@@ -252,6 +255,15 @@ function getProjectImagePaths(project: ProjectCatalogItem): string[] {
 // Synchronous — reads glob keys only, no I/O.
 // Use for tab detection and figuring out which categories exist.
 export function getProjectPathGroups(project: ProjectCatalogItem): Record<GalleryCategory, string[]> {
+  const allPaths = getProjectImagePaths(project);
+  const thumbnailPath = pickProjectThumbnailPath(project, allPaths);
+  const limitedPaths = thumbnailPath
+    ? [
+        thumbnailPath,
+        ...allPaths.filter((path) => path !== thumbnailPath).slice(0, DEMO_PROJECT_IMAGE_LIMIT - 1),
+      ]
+    : allPaths.slice(0, DEMO_PROJECT_IMAGE_LIMIT);
+
   const groups: Record<GalleryCategory, string[]> = {
     gallery: [],
     projections: [],
@@ -261,7 +273,7 @@ export function getProjectPathGroups(project: ProjectCatalogItem): Record<Galler
     'apartment-2': [],
     floorplans: [],
   };
-  for (const path of getProjectImagePaths(project)) {
+  for (const path of limitedPaths) {
     groups[detectCategory(getStem(path))].push(path);
   }
   return groups;
@@ -280,7 +292,8 @@ export async function loadCategoryImages(paths: string[]): Promise<ProjectImageI
 export async function loadProjectCoverImage(project: ProjectCatalogItem): Promise<string | null> {
   const paths = getProjectImagePaths(project);
   if (paths.length === 0) return null;
-  return imageModuleGetters[paths[0]]!();
+  const chosen = pickProjectThumbnailPath(project, paths) ?? paths[0];
+  return imageModuleGetters[chosen]!();
 }
 
 function pickProjectThumbnailPath(project: ProjectCatalogItem, paths: string[]): string | null {
