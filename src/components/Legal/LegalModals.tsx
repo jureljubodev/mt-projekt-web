@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './LegalModals.module.css';
+import { lockBodyScroll } from '../../utils/scrollLock';
 
 export type LegalPolicyType = 'privacy' | 'terms' | 'cookies';
 
@@ -24,11 +25,11 @@ export default function LegalModals({ activePolicy, onClose }: LegalModalsProps)
     };
 
     document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
+    const unlockScroll = lockBodyScroll();
 
     return () => {
       document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = '';
+      unlockScroll();
     };
   }, [activePolicy, onClose]);
 

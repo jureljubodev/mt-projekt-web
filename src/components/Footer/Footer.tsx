@@ -8,7 +8,7 @@ interface FooterProps {
   onOpenPolicy: (policy: LegalPolicyType) => void;
 }
 
-const BUILD_MARK = 'build-2026-04-08-9';
+const BUILD_MARK = 'build-2026-04-08-10';
 
 export default function Footer({ onOpenPolicy }: FooterProps) {
   const { t } = useTranslation();

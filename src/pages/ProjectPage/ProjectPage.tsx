@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './ProjectPage.module.css';
@@ -14,6 +14,7 @@ import {
   getProjectBySlug,
 } from '../../data/projectsCatalog';
 import Seo from '../../components/Seo/Seo';
+import { lockBodyScroll } from '../../utils/scrollLock';
 
 const CATEGORY_ORDER: GalleryCategory[] = [
   'gallery',
@@ -52,8 +53,6 @@ export default function ProjectPage() {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [visibleCount, setVisibleCount] = useState(INITIAL_GALLERY_BATCH);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const lockedScrollYRef = useRef(0);
-
 
   const activeResolved = categories.includes(activeCategory) ? activeCategory : categories[0] ?? CATEGORY_ORDER[0];
 
@@ -124,21 +123,7 @@ export default function ProjectPage() {
       return;
     }
 
-    lockedScrollYRef.current = window.scrollY;
-    const previousBodyOverflow = document.body.style.overflow;
-    const previousHtmlOverflow = document.documentElement.style.overflow;
-    const previousOverscroll = document.documentElement.style.overscrollBehavior;
-
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-    document.documentElement.style.overscrollBehavior = 'none';
-
-    return () => {
-      document.body.style.overflow = previousBodyOverflow;
-      document.documentElement.style.overflow = previousHtmlOverflow;
-      document.documentElement.style.overscrollBehavior = previousOverscroll;
-      window.scrollTo({ top: lockedScrollYRef.current, behavior: 'auto' });
-    };
+    return lockBodyScroll();
   }, [lightboxIndex]);
 
   if (!slug) return <Navigate to="/ponuda" replace />;

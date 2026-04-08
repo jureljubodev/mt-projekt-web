@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 import { useTranslation } from 'react-i18next';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import { useSafeMode } from '../../utils/safeMode';
+import { subscribeToMediaQuery } from '../../utils/mediaQuery';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -18,14 +19,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
+    return subscribeToMediaQuery('(min-width: 768px)', (isDesktop) => {
+      if (isDesktop) {
         setMenuOpen(false);
       }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    });
   }, []);
 
   const closeMenu = () => setMenuOpen(false);

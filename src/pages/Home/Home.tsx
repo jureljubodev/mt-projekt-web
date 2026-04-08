@@ -7,6 +7,7 @@ import aboutCraftVisual from '../../assets/images/about-craft-visual.svg';
 import { PROJECTS_CATALOG, loadProjectThumbnailImage } from '../../data/projectsCatalog';
 import Seo from '../../components/Seo/Seo';
 import { useSafeMode } from '../../utils/safeMode';
+import { subscribeToMediaQuery } from '../../utils/mediaQuery';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -14,9 +15,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
   useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    return subscribeToMediaQuery('(max-width: 767px)', setIsMobile);
   }, []);
 
   const featuredProjects = PROJECTS_CATALOG

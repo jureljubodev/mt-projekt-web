@@ -20,11 +20,11 @@ export interface ProjectCatalogItem {
   status: ProjectStatus;
   featured: boolean;
 }
+import { DEMO_IMAGE_MANIFEST } from './demoImageManifest';
 
-const imageModuleGetters = import.meta.glob<string>(
-  '../assets/images/**/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
-  { import: 'default' },
-) as Record<string, () => Promise<string>>;
+const PUBLIC_BASE = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
 
 function extractNumber(filePath: string) {
   const match = filePath.match(/(\d+)(?=\.[^.]+$)/);
@@ -36,31 +36,6 @@ function getStem(filePath: string) {
   const file = parts[parts.length - 1] ?? '';
   return file.replace(/\.[^.]+$/, '');
 }
-
-const THUMBNAIL_AVOID_RE = /(topo|topograf|situac|katast|geodet|nacrt|crt(e|ez)|draw|drawing|plan|tlocrt|floorplan|projection|render|vizual|vizualiz|projekt|presjek|section|tlocrt|ground[-_ ]?floor|prizemlje|objekt[-_ ]?[ab])/i;
-
-const THUMBNAIL_SKIP_LEADING_BY_PROJECT: Partial<Record<ProjectCatalogItem['id'], number>> = {
-  siloKrk: 5,
-  villeKrkA: 5,
-  villeKrkB: 5,
-  qubo4: 5,
-  malinska1: 5,
-  malinska2: 5,
-  pavus: 5,
-  selce2: 5,
-  qubo3: 5,
-  santoriniCrikvenica: 5,
-  santoriniNjivice: 5,
-  saintMartinKostelj: 5,
-};
-
-const THUMBNAIL_STEM_OVERRIDE_BY_PROJECT: Partial<Record<ProjectCatalogItem['id'], string>> = {
-  siloKrk: 'apartmani-silo-krk24',
-  selce2: 'apartmani-selce-224',
-};
-
-// Demo mode cap: keep one thumbnail and only a few additional images per project.
-const DEMO_PROJECT_IMAGE_LIMIT = 4;
 
 function detectCategory(filePath: string): GalleryCategory {
   const lower = filePath.toLowerCase();
@@ -242,27 +217,21 @@ export function getProjectBySlug(slug: string) {
   return PROJECTS_CATALOG.find((project) => project.slug === slug);
 }
 
-function getProjectImagePaths(project: ProjectCatalogItem): string[] {
-  const folderSegment = `/images/${project.imageFolder}/`;
-  return Object.keys(imageModuleGetters)
-    .filter((path) => path.includes(folderSegment))
-    .sort((a, b) => {
-      const numDelta = extractNumber(a) - extractNumber(b);
-      return numDelta !== 0 ? numDelta : a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
-    });
+function toPublicAssetUrl(path: string): string {
+  return path.startsWith('/') ? `${PUBLIC_BASE}${path}` : path;
 }
 
-// Synchronous — reads glob keys only, no I/O.
-// Use for tab detection and figuring out which categories exist.
+function getProjectImagePaths(project: ProjectCatalogItem): string[] {
+  return [...(DEMO_IMAGE_MANIFEST[project.id] ?? [])]
+    .map(toPublicAssetUrl)
+    .sort((a, b) => {
+    const numDelta = extractNumber(a) - extractNumber(b);
+    return numDelta !== 0 ? numDelta : a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+  });
+}
+
 export function getProjectPathGroups(project: ProjectCatalogItem): Record<GalleryCategory, string[]> {
-  const allPaths = getProjectImagePaths(project);
-  const thumbnailPath = pickProjectThumbnailPath(project, allPaths);
-  const limitedPaths = thumbnailPath
-    ? [
-        thumbnailPath,
-        ...allPaths.filter((path) => path !== thumbnailPath).slice(0, DEMO_PROJECT_IMAGE_LIMIT - 1),
-      ]
-    : allPaths.slice(0, DEMO_PROJECT_IMAGE_LIMIT);
+  const limitedPaths = getProjectImagePaths(project);
 
   const groups: Record<GalleryCategory, string[]> = {
     gallery: [],
@@ -279,64 +248,22 @@ export function getProjectPathGroups(project: ProjectCatalogItem): Record<Galler
   return groups;
 }
 
-// Async — resolves Vite URL for each path on demand.
 export async function loadCategoryImages(paths: string[]): Promise<ProjectImageItem[]> {
-  return Promise.all(
-    paths.map(async (path, index) => ({
-      src: await imageModuleGetters[path]!(),
-      label: getStem(path) || `image-${index + 1}`,
-    })),
-  );
+  return paths.map((path, index) => ({
+    src: path,
+    label: getStem(path) || `image-${index + 1}`,
+  }));
 }
 
 export async function loadProjectCoverImage(project: ProjectCatalogItem): Promise<string | null> {
   const paths = getProjectImagePaths(project);
   if (paths.length === 0) return null;
-  const chosen = pickProjectThumbnailPath(project, paths) ?? paths[0];
-  return imageModuleGetters[chosen]!();
+  return paths[0];
 }
 
-function pickProjectThumbnailPath(project: ProjectCatalogItem, paths: string[]): string | null {
-  if (paths.length === 0) return null;
-
-  const explicitStem = THUMBNAIL_STEM_OVERRIDE_BY_PROJECT[project.id];
-  if (explicitStem) {
-    const explicitPath = paths.find((path) => getStem(path).toLowerCase() === explicitStem.toLowerCase());
-    if (explicitPath) return explicitPath;
-  }
-
-  const skipLeading = THUMBNAIL_SKIP_LEADING_BY_PROJECT[project.id] ?? 0;
-  const candidatePaths = paths.length > skipLeading ? paths.slice(skipLeading) : paths;
-
-  const ranked = candidatePaths
-    .map((path, index) => {
-      const stem = getStem(path);
-      const category = detectCategory(stem);
-      let score = 0;
-
-      if (category === 'gallery') score += 4;
-      if (category === 'exterior') score += 3;
-      if (category === 'interior') score += 2;
-      if (category === 'apartment-1' || category === 'apartment-2') score += 1;
-      if (category === 'floorplans' || category === 'projections') score -= 4;
-      if (THUMBNAIL_AVOID_RE.test(stem)) score -= 3;
-
-      return { path, index, score };
-    })
-    .sort((a, b) => {
-      if (b.score !== a.score) return b.score - a.score;
-      return a.index - b.index;
-    });
-
-  return ranked[0]?.path ?? candidatePaths[0] ?? paths[0];
-}
-
-// Prefer real facade/interior/gallery photos for cards and listing thumbnails.
 export async function loadProjectThumbnailImage(project: ProjectCatalogItem): Promise<string | null> {
   const paths = getProjectImagePaths(project);
-  const chosen = pickProjectThumbnailPath(project, paths);
-  if (!chosen) return null;
-  return imageModuleGetters[chosen]!();
+  return paths[0] ?? null;
 }
 
 export const GALLERY_CATEGORY_LABELS: Record<GalleryCategory, string> = {

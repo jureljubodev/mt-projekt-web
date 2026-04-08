@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { PROJECTS_CATALOG, loadProjectThumbnailImage, type ProjectCatalogItem, type ProjectStatus } from '../../data/projectsCatalog';
 import Seo from '../../components/Seo/Seo';
 import { useSafeMode } from '../../utils/safeMode';
+import { subscribeToMediaQuery } from '../../utils/mediaQuery';
 
 interface Project {
   id: string;
@@ -25,9 +26,7 @@ export default function Properties() {
   const [soldLimit, setSoldLimit] = useState(4);
 
   useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    return subscribeToMediaQuery('(max-width: 767px)', setIsMobile);
   }, []);
 
   const projects: Project[] = PROJECTS_CATALOG.map((p) => ({
