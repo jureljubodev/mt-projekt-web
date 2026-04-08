@@ -134,8 +134,6 @@
 .statsBar {
   background-color: var(--pm-navy);
   padding-block: 2.5rem;
-  content-visibility: auto;
-  contain-intrinsic-size: 260px;
 }
 
 .statsList {
@@ -176,8 +174,6 @@
 /* ── About ── */
 .about {
   background-color: var(--pm-white);
-  content-visibility: auto;
-  contain-intrinsic-size: 900px;
 }
 
 .aboutGrid {
@@ -237,8 +233,6 @@
 /* ── Projects ── */
 .projects {
   background-color: var(--pm-off-white);
-  content-visibility: auto;
-  contain-intrinsic-size: 1200px;
 }
 
 .sectionHeader {
@@ -266,8 +260,6 @@
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  content-visibility: auto;
-  contain-intrinsic-size: 420px;
 }
 
 .projectCard:hover {
@@ -365,8 +357,6 @@
   background-color: var(--pm-navy);
   padding-block: var(--section-py);
   text-align: center;
-  content-visibility: auto;
-  contain-intrinsic-size: 420px;
 }
 
 .ctaTitle {
