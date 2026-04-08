@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -10,8 +10,11 @@ const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 const ProjectPage = lazy(() => import('./pages/ProjectPage/ProjectPage'));
 
 export default function App() {
+  const isGithubPages = typeof window !== 'undefined' && window.location.hostname.endsWith('github.io');
+  const Router = isGithubPages ? HashRouter : BrowserRouter;
+
   return (
-    <BrowserRouter>
+    <Router>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -24,6 +27,6 @@ export default function App() {
           </Route>
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </Router>
   );
 }
