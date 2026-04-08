@@ -25,6 +25,8 @@
 /* ── Projects section ── */
 .projectsSection {
   background-color: var(--pm-white);
+  content-visibility: auto;
+  contain-intrinsic-size: 1300px;
 }
 
 .altBg {
@@ -51,6 +53,8 @@
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--pm-border);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 520px;
 }
 
 .card:hover {
