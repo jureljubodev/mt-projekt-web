@@ -1,0 +1,57 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  background: rgba(7, 14, 25, 0.68);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(86vh, 820px);
+  overflow-y: auto;
+  background: linear-gradient(160deg, #ffffff 0%, #f8f4ea 100%);
+  border: 1px solid rgba(169, 136, 44, 0.28);
+  box-shadow: 0 20px 60px rgba(15, 27, 45, 0.28);
+  border-radius: 14px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 27, 45, 0.2);
+  background-color: rgba(255, 255, 255, 0.85);
+  color: var(--pm-navy);
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background-color: var(--pm-navy);
+  color: var(--pm-white);
+}
+
+.title {
+  padding-right: 2rem;
+}
+
+.content {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.content p {
+  color: rgba(17, 17, 17, 0.86);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}

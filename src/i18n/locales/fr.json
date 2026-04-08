@@ -1,0 +1,531 @@
+{
+  "common": {
+    "available": "Disponible",
+    "sold": "Vendu",
+    "learnMore": "Plus d'informations →",
+    "seeAll": "Toutes les offres →",
+    "founded": "Fondation",
+    "copyright": "Projekt MT d.o.o. – Tous droits réservés."
+  },
+  "nav": {
+    "home": "Accueil",
+    "properties": "Propriétés",
+    "about": "À propos",
+    "contact": "Contact",
+    "cta": "Nous contacter"
+  },
+  "footer": {
+    "tagline": "Construction et vente d'appartements de luxe sur l'Adriatique du Nord et à Zagreb.",
+    "navCol": "Navigation",
+    "projectsCol": "Projets"
+  },
+  "home": {
+    "heroLabel": "Construction & Vente Immobilière",
+    "heroTitle1": "Vie de luxe",
+    "heroTitle2": "sur la côte adriatique",
+    "heroSubtitle": "Projekt MT – constructeurs d'excellence en appartements et villas sur l'Adriatique du Nord et à Zagreb depuis 2001.",
+    "heroCta1": "Voir les propriétés",
+    "heroCta2": "À propos",
+    "stat1": "Années d'expérience",
+    "stat2": "Projets achevés",
+    "stat3": "Familles satisfaites",
+    "stat4": "Régions d'intervention",
+    "aboutLabel": "Qui sommes-nous",
+    "aboutHeading": "Une société réputée avec d'excellentes références",
+    "aboutP1": "PROJEKT MT d.o.o. Zagreb a été fondée en 2001 par Mario Tadić, qui en a fait grâce à son travail une société réputée et solide avec d'excellentes références.",
+    "aboutP2": "La société se spécialise principalement dans la construction d'appartements, avec de nombreux bâtiments sur l'Adriatique du Nord et à Zagreb. En tant que constructeurs de premier plan, nous sommes reconnus pour la construction de villas de luxe avec une approche progressive et une précision dans le respect des normes de construction.",
+    "aboutCta": "En savoir plus",
+    "projectsLabel": "Nos projets",
+    "projectsHeading": "Projets sélectionnés",
+    "ctaLabel": "Votre nouveau foyer",
+    "ctaHeading": "Intéressé par une propriété ?",
+    "ctaText": "Contactez-nous pour plus d'informations sur les projets disponibles ou pour organiser une visite.",
+    "ctaBtn": "Nous contacter"
+  },
+  "projects": {
+    "villaAzzuro": {
+      "title": "Villa Azzuro Malinska",
+      "location": "Malinska, île de Krk",
+      "shortDesc": "Une villa de luxe avec vue sur la mer dans le quartier tranquille de Malinska.",
+      "fullDesc": "Une villa de luxe située dans l'un des endroits les plus attractifs le long de la magnifique côte de l'Adriatique du Nord. Un bâtiment ultra-moderne de la plus haute qualité.",
+      "features": [
+        "Bord de mer",
+        "Meublé luxueusement",
+        "Parking",
+        "Terrasse"
+      ],
+      "materials": [
+        "Bord de mer",
+        "Meublé luxueusement",
+        "Parking",
+        "Terrasse"
+      ]
+    },
+    "sesvete": {
+      "title": "Projekt Sesvete",
+      "location": "Sesvete, Zagreb",
+      "shortDesc": "Un complexe résidentiel moderne à Sesvete avec une vue exceptionnelle.",
+      "fullDesc": "Un complexe résidentiel moderne à Sesvete, un quartier de Zagreb en constante expansion. Excellente infrastructure et connectivité avec le centre de Zagreb.",
+      "features": [
+        "Proche du centre",
+        "Design moderne",
+        "Garage",
+        "Espaces verts"
+      ],
+      "materials": [
+        "Proche du centre",
+        "Design moderne",
+        "Garage",
+        "Espaces verts"
+      ]
+    },
+    "villeKrkA": {
+      "title": "Ville KRK – Bâtiment A",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Propriétés résidentielles exclusives sur l'île de Krk, à proximité de la mer.",
+      "fullDesc": "Un bâtiment résidentiel exclusif sur l'île de Krk, à proximité immédiate de la mer. Matériaux de qualité supérieure et architecture contemporaine en harmonie avec la nature.",
+      "features": [
+        "Vue sur la mer",
+        "Piscine privée",
+        "Matériaux premium",
+        "Maison intelligente"
+      ],
+      "materials": [
+        "Vue sur la mer",
+        "Piscine privée",
+        "Matériaux premium",
+        "Maison intelligente"
+      ]
+    },
+    "villeKrkB": {
+      "title": "Ville KRK – Bâtiment B",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Le deuxième bâtiment résidentiel du projet Ville KRK.",
+      "fullDesc": "Le deuxième bâtiment résidentiel du projet Ville KRK. Les mêmes normes de construction élevées avec des plans légèrement différents.",
+      "features": [
+        "Vue sur la mer",
+        "Piscine privée",
+        "Jardin",
+        "Climatisation"
+      ],
+      "materials": [
+        "Vue sur la mer",
+        "Piscine privée",
+        "Jardin",
+        "Climatisation"
+      ]
+    },
+    "qubo4": {
+      "title": "Villa Malinska QUBO4",
+      "location": "Malinska, île de Krk",
+      "shortDesc": "Une villa au design moderne avec des motifs architecturaux cubiques au cœur de Malinska.",
+      "fullDesc": "Une villa au design moderne avec des motifs architecturaux cubiques au cœur de Malinska. Un design attrayant qui s'intègre parfaitement dans l'environnement méditerranéen.",
+      "features": [
+        "Design moderne",
+        "Proche de la plage",
+        "Terrasse",
+        "Espace barbecue"
+      ],
+      "materials": [
+        "Design moderne",
+        "Proche de la plage",
+        "Terrasse",
+        "Espace barbecue"
+      ]
+    },
+    "malinska2": {
+      "title": "Villa Malinska 2",
+      "location": "Malinska, île de Krk",
+      "shortDesc": "Deuxième projet à Malinska, synonyme de construction de qualité.",
+      "fullDesc": "Deuxième projet à Malinska devenu synonyme de construction de qualité et d'attention aux détails dans le segment luxe.",
+      "features": [
+        "Piscine",
+        "Proche de la mer",
+        "Terrasse",
+        "Parking"
+      ],
+      "materials": [
+        "Piscine",
+        "Proche de la mer",
+        "Terrasse",
+        "Parking"
+      ]
+    },
+    "malinska1": {
+      "title": "Villa Malinska 1",
+      "location": "Malinska, île de Krk",
+      "shortDesc": "Le projet pionnier de Projekt MT sur l'île de Krk.",
+      "fullDesc": "Le projet pionnier de Projekt MT sur l'île de Krk, qui a posé les bases de tous les futurs projets de l'entreprise sur la côte adriatique.",
+      "features": [
+        "Proche de la mer",
+        "Jardin aménagé",
+        "Garage",
+        "Terrasse avec vue"
+      ],
+      "materials": [
+        "Proche de la mer",
+        "Jardin aménagé",
+        "Garage",
+        "Terrasse avec vue"
+      ]
+    },
+    "selce2": {
+      "title": "Appartements Selce 2",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Appartements de luxe dans la charmante station balnéaire de Selce, à 3 km au sud-est de Crikvenica, avec possibilité de piscine privée.",
+      "fullDesc": "Selce est une petite station balnéaire du Kvarner, à 3 km au sud-est de Crikvenica, connue pour sa plage de sable et sa tradition touristique séculaire. Les appartements sont construits avec des matériaux haut de gamme et une multitude de détails modernes.",
+      "features": [
+        "2 min. de la mer",
+        "Piscine privée en option",
+        "Climatisation",
+        "Parquet exotique",
+        "Volets électriques"
+      ],
+      "materials": [
+        "2 min. de la mer",
+        "Piscine privée en option",
+        "Climatisation",
+        "Parquet exotique",
+        "Volets électriques"
+      ]
+    },
+    "siloKrk": {
+      "title": "Appartements Šilo Krk",
+      "location": "Šilo, île de Krk",
+      "shortDesc": "Appartements dans la pittoresque baie de Stipanja sur l'île de Krk, avec plage de sable et mer limpide.",
+      "fullDesc": "Šilo est la plus grande localité de la commune de Dobrinj, nichée dans la baie protégée de Stipanja, à proximité de Crikvenica. Les appartements sont équipés de matériaux de qualité à seulement 5 min à pied de la plage.",
+      "features": [
+        "5 min. de la mer",
+        "Piscine privée en option",
+        "Climatisation",
+        "Sanitaires italiens",
+        "Fenêtres PVC"
+      ],
+      "materials": [
+        "5 min. de la mer",
+        "Piscine privée en option",
+        "Climatisation",
+        "Sanitaires italiens",
+        "Fenêtres PVC"
+      ]
+    },
+    "bukovacZagreb": {
+      "title": "Bukovac Zagreb",
+      "location": "Gornji Bukovac, Zagreb",
+      "shortDesc": "Appartements exclusifs dans une résidence de luxe au Gornji Bukovac avec vue sur Zagreb et garage privé.",
+      "fullDesc": "Appartements dans une résidence exclusive au Gornji Bukovac, avec serrure à carte, alarme, interphone vidéo, volets électriques, jacuzzi, sauna, plancher chauffant, parois en pierre naturelle et radiateurs design. Garage privé et 2 places de parking inclus.",
+      "features": [
+        "Garage privé",
+        "Jacuzzi & sauna",
+        "Vidéosurveillance",
+        "Vue sur Zagreb",
+        "Aspirateur central"
+      ],
+      "materials": [
+        "Garage privé",
+        "Jacuzzi & sauna",
+        "Vidéosurveillance",
+        "Vue sur Zagreb",
+        "Aspirateur central"
+      ]
+    },
+    "dramaljApartmani": {
+      "title": "Appartements Dramalj",
+      "location": "Dramalj, Crikvenica",
+      "shortDesc": "Appartements exclusifs dans un cadre calme à Dramalj avec une vue magnifique sur la mer.",
+      "fullDesc": "Dramalj est une station touristique à proximité de Crikvenica. Ces appartements exclusifs profitent d'un cadre tranquille avec une vue imprenable sur la mer et sont dotés de matériaux haut de gamme.",
+      "features": [
+        "Vue sur la mer",
+        "Salles climatisées",
+        "Sanitaires italiens",
+        "Balustrades INOX",
+        "Aspirateur central"
+      ],
+      "materials": [
+        "Vue sur la mer",
+        "Salles climatisées",
+        "Sanitaires italiens",
+        "Balustrades INOX",
+        "Aspirateur central"
+      ]
+    },
+    "perjavicaZagreb": {
+      "title": "Perjavica Zagreb",
+      "location": "Perjavica, Zagreb",
+      "shortDesc": "Villa urbaine sur un emplacement prisé des contreforts de Zagreb avec vue panoramique sur la ville.",
+      "fullDesc": "Nous avons construit une villa urbaine à Perjavica, un emplacement récemment découvert et très attractif sur le versant de Zagreb. Un design moderne, une infrastructure urbaine et un cadre idyllique. Chaque appartement dispose de son propre garage et l'immeuble comprend une salle Fitness-Wellness avec jacuzzi et sauna.",
+      "features": [
+        "Garage privé",
+        "Fitness-Wellness",
+        "Jacuzzi & sauna",
+        "Vue sur Zagreb",
+        "Clim Daikin"
+      ],
+      "materials": [
+        "Garage privé",
+        "Fitness-Wellness",
+        "Jacuzzi & sauna",
+        "Vue sur Zagreb",
+        "Clim Daikin"
+      ]
+    },
+    "qubo3": {
+      "title": "Qubo 3 Malinska",
+      "location": "Malinska, île de Krk",
+      "shortDesc": "Trois appartements de luxe avec piscines à débordement dans le cadre verdoyant et paisible de Malinska.",
+      "fullDesc": "Les appartements de luxe Qubo 3 se trouvent sur l'île de Krk à Malinska, dans un cadre verdoyant et calme à deux pas de la mer. Le complexe comprend l'appartement 1 (156 m²) avec jardin et piscine privés, l'appartement 2 (78 m²) penthouse et l'appartement 3 (113 m²) avec jardin et piscine privés. Piscines à débordement avec éclairage LED multicolore, baies vitrées coulissantes panoramiques et climatisation A+.",
+      "features": [
+        "Piscine à débordement LED",
+        "Clim A+",
+        "Baies vitrées panoramiques",
+        "Aménagement paysager",
+        "Vidéosurveillance"
+      ],
+      "materials": [
+        "Piscine à débordement LED",
+        "Clim A+",
+        "Baies vitrées panoramiques",
+        "Aménagement paysager",
+        "Vidéosurveillance"
+      ]
+    },
+    "santoriniCrikvenica": {
+      "title": "Santorini Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Appartements de luxe à Crikvenica – rez-de-chaussée avec jardin et piscine privés, étage avec piscine commune.",
+      "fullDesc": "Crikvenica est située dans la baie du Kvarner à 33 km de Rijeka, avec plus d'un siècle de tradition touristique. Appartements luxueux avec parquet exotique, escalier en marbre, sanitaires italiens et climatisation.",
+      "features": [
+        "Piscine par appartement",
+        "Parquet exotique",
+        "Escalier en marbre",
+        "Climatisation",
+        "Fenêtres PVC"
+      ],
+      "materials": [
+        "Piscine par appartement",
+        "Parquet exotique",
+        "Escalier en marbre",
+        "Climatisation",
+        "Fenêtres PVC"
+      ]
+    },
+    "santoriniNjivice": {
+      "title": "Santorini Njivice",
+      "location": "Njivice, île de Krk",
+      "shortDesc": "Villa moderne de luxe avec quatre unités résidentielles, chacune avec sa propre piscine, à 400 m de la mer sur l'île de Krk.",
+      "fullDesc": "Villa de luxe avec vue sur la mer sur la côte nord de l'Adriatique sur l'île de Krk. Quatre unités – rez-de-chaussée avec jardin et piscine privés, étage avec terrasse sur le toit et piscine. Distance à la mer : 400 m.",
+      "features": [
+        "Piscine privée par unité",
+        "Terrasse sur le toit",
+        "Parquet exotique",
+        "Escalier en marbre",
+        "400 m de la mer"
+      ],
+      "materials": [
+        "Piscine privée par unité",
+        "Terrasse sur le toit",
+        "Parquet exotique",
+        "Escalier en marbre",
+        "400 m de la mer"
+      ]
+    },
+    "selceApartmani": {
+      "title": "Appartements Selce",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Appartements luxueux dans la baie pittoresque de Selce, à 35 km au sud de Rijeka, avec belle vue sur la mer.",
+      "fullDesc": "Selce se situe dans une baie pittoresque près de Crikvenica, à 35 km au sud de Rijeka. Parquet exotique, climatisation Daikin, sanitaires italiens et aspirateurs centraux. Le complexe comprend garages et caves.",
+      "features": [
+        "Vue sur la mer",
+        "Garage & cave",
+        "Parquet exotique",
+        "Clim Daikin",
+        "Aspirateur central"
+      ],
+      "materials": [
+        "Vue sur la mer",
+        "Garage & cave",
+        "Parquet exotique",
+        "Clim Daikin",
+        "Aspirateur central"
+      ]
+    },
+    "villaAzzuroCrikvenica": {
+      "title": "Villa Azzuro Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Complexe de villas ultra-modernes en pierre de Brač en première ligne de mer, 9 appartements de luxe de 120–160 m².",
+      "fullDesc": "Neuf appartements de luxe ultra-modernes (120–160 m²) en première ligne de mer avec de belles plages. Chaque villa a trois appartements et un garage souterrain avec ascenseur direct. Habillées en pierre de Brač, certains appartements avec jardin et piscine privés.",
+      "features": [
+        "1ère ligne de mer",
+        "Pierre de Brač",
+        "Garage souterrain ascenseur",
+        "Piscine en option",
+        "Finition premium"
+      ],
+      "materials": [
+        "1ère ligne de mer",
+        "Pierre de Brač",
+        "Garage souterrain ascenseur",
+        "Piscine en option",
+        "Finition premium"
+      ]
+    },
+    "villaVerdeCrikvenica": {
+      "title": "Villa Verde Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Villas ultra-modernes en pierre de Brač en première ligne de mer, avec garage souterrain et ascenseur direct.",
+      "fullDesc": "Neuf appartements de luxe ultra-modernes (120–160 m²) en première ligne de mer. Chaque villa a trois appartements et un garage souterrain avec ascenseur direct. Habillées en pierre de Brač, certains appartements avec jardin et piscine.",
+      "features": [
+        "1ère ligne de mer",
+        "Pierre de Brač",
+        "Garage souterrain ascenseur",
+        "Piscine en option",
+        "Design exclusif"
+      ],
+      "materials": [
+        "1ère ligne de mer",
+        "Pierre de Brač",
+        "Garage souterrain ascenseur",
+        "Piscine en option",
+        "Design exclusif"
+      ]
+    },
+    "villaZorcici": {
+      "title": "Villa Zorčići",
+      "location": "Zorčići",
+      "shortDesc": "Maison familiale de luxe avec piscine dans l'idyllique village de Zorčići.",
+      "fullDesc": "Maison familiale de luxe avec piscine dans le village idyllique de Zorčići, entouré d'une nature luxuriante offrant calme et intimité.",
+      "features": [
+        "Piscine privée",
+        "Villa familiale",
+        "Calme & intimité",
+        "Nature verdoyante"
+      ],
+      "materials": [
+        "Piscine privée",
+        "Villa familiale",
+        "Calme & intimité",
+        "Nature verdoyante"
+      ]
+    },
+    "saintMartinKostelj": {
+      "title": "Villas Saint Martin",
+      "location": "Kostelj, Crikvenica",
+      "shortDesc": "Quatre villas de luxe dans l'arrière-pays de Crikvenica, à 5 km de la mer, avec piscine, sauna et mobilier italien.",
+      "fullDesc": "Quatre villas familiales de luxe dans les environs de Crikvenica, à 5 km de la mer et du lac Tribalj. Chaque villa s'étend sur 200 m² avec 650 m² de terrain, trois chambres en suite, deux salles de bain, piscine extérieure, jacuzzi intérieur et extérieur, sauna, cuisine d'été et cheminée. Entièrement meublée avec des meubles italiens de designer.",
+      "features": [
+        "Piscine extérieure",
+        "Sauna & jacuzzi",
+        "Cuisine d'été & cheminée",
+        "Vue mer & lac",
+        "Mobilier italien"
+      ],
+      "materials": [
+        "Piscine extérieure",
+        "Sauna & jacuzzi",
+        "Cuisine d'été & cheminée",
+        "Vue mer & lac",
+        "Mobilier italien"
+      ]
+    },
+    "pavus": {
+      "title": "Villa Malinska Pavus",
+      "location": "Malinska, île de Krk",
+      "shortDesc": "Une villa élégante inspirée du style architectural méditerranéen.",
+      "fullDesc": "Une villa élégante inspirée du style architectural méditerranéen, utilisant des matériaux et équipements haut de gamme pour une qualité et un confort durables.",
+      "features": [
+        "Piscine",
+        "Style méditerranéen",
+        "Terrasse",
+        "Climatisation"
+      ],
+      "materials": [
+        "Piscine",
+        "Style méditerranéen",
+        "Terrasse",
+        "Climatisation"
+      ]
+    }
+  },
+  "properties": {
+    "label": "Notre Offre",
+    "heading": "Projets & Propriétés",
+    "description": "Parcourez nos projets sur l'Adriatique du Nord et à Zagreb. Chaque bâtiment reflète nos standards intransigeants en matière de construction et de design.",
+    "availableHeading": "Propriétés disponibles",
+    "soldHeading": "Projets réalisés"
+  },
+  "about": {
+    "label": "À propos",
+    "heading": "Projekt MT d.o.o.",
+    "description": "Une société de construction réputée et solide avec d'excellentes références, fondée à Zagreb en 2001.",
+    "storyLabel": "Notre histoire",
+    "storyHeading": "Plus de 20 ans d'excellence dans la construction",
+    "storyP1": "PROJEKT MT d.o.o. Zagreb a été fondée en 2001 par Mario Tadić, qui en a fait par son travail une société réputée et solide avec d'excellentes références.",
+    "storyP2": "La société se spécialise principalement dans la construction d'appartements, avec de nombreuses propriétés sur l'Adriatique du Nord et à Zagreb. Nos bâtiments ultra-modernes de la plus haute qualité sont situés sur des emplacements attractifs le long de la magnifique côte.",
+    "storyP3": "En tant que constructeurs de premier plan, PROJEKT MT d.o.o. est réputé pour la construction de villas de luxe. Nous suivons une approche progressive avec une stratégie unique d'artisanat et de précision dans le respect des normes de construction.",
+    "storyP4": "Quelle que soit l'envergure du projet, l'engagement incomparable de la société et l'approche pratique du processus de construction font que chaque projet se distingue.",
+    "valuesLabel": "Nos valeurs",
+    "valuesHeading": "Ce qui nous rend uniques",
+    "value1Title": "Qualité des matériaux",
+    "value1Desc": "Nous utilisons uniquement des matériaux et équipements de qualité supérieure qui garantissent une qualité, un confort et une attrait esthétique durables.",
+    "value2Title": "Précision d'exécution",
+    "value2Desc": "Chaque détail est soigneusement planifié et exécuté. La livraison dans les délais et le respect des échéances sont notre engagement envers nos clients.",
+    "value3Title": "Design luxueux",
+    "value3Desc": "Notre équipe d'architectes et de designers d'intérieur crée des bâtiments dans un style architectural moderne qui s'intègrent parfaitement dans leur environnement.",
+    "value4Title": "Fiabilité",
+    "value4Desc": "Une société en croissance exponentielle depuis sa fondation, grâce à la confiance des clients et un réseau de propriétaires satisfaits.",
+    "teamLabel": "Notre équipe",
+    "teamHeading": "L'expertise derrière chaque projet",
+    "team1Name": "Mario Tadić",
+    "team1Role": "Fondateur & Directeur",
+    "team1Desc": "Fondateur de la société qui depuis 2001 a bâti une société de construction réputée et solide connue pour sa qualité.",
+    "team2Name": "Équipe d'architecture",
+    "team2Role": "Architecture & design",
+    "team2Desc": "Architectes expérimentés qui créent des bâtiments contemporains dans le respect des traditions locales et de l'environnement naturel.",
+    "team3Name": "Équipe de construction",
+    "team3Role": "Construction & supervision",
+    "team3Desc": "Une équipe qualifiée de professionnels de la construction qui exécute chaque projet selon les normes les plus élevées du secteur."
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Contactez-nous",
+    "description": "Vous avez des questions sur nos projets ou souhaitez organiser une visite ? Contactez-nous – nous serons ravis de vous aider.",
+    "infoTitle": "Informations",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Téléphone",
+    "emailLabel": "E-mail",
+    "hoursLabel": "Horaires d'ouverture",
+    "hoursLine1": "Lun – Ven : 09h00 – 17h00",
+    "hoursLine2": "Sam : 09h00 – 13h00",
+    "formTitle": "Envoyer une demande",
+    "nameLabel": "Nom et prénom",
+    "namePlaceholder": "Votre nom",
+    "emailFieldLabel": "Adresse e-mail",
+    "emailPlaceholder": "votre@email.fr",
+    "phoneFieldLabel": "Numéro de téléphone",
+    "phonePlaceholder": "+385 ...",
+    "subjectLabel": "Sujet",
+    "subjectDefault": "Sélectionner un projet...",
+    "subjectOther": "Autre",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Votre message ou demande...",
+    "submitBtn": "Envoyer le message",
+    "successTitle": "Message envoyé avec succès !",
+    "successText": "Merci pour votre demande. Nous vous répondrons dans les plus brefs délais.",
+    "successBtn": "Envoyer un autre message",
+    "errorRequired": "Veuillez remplir tous les champs obligatoires.",
+    "errorEmail": "Veuillez entrer une adresse e-mail valide."
+  },
+  "projectPage": {
+    "overview": "Présentation du projet",
+    "gallery": "Galerie",
+    "otherProjects": "Autres projets",
+    "loading": "Chargement des images...",
+    "materials": "Materiaux et equipement"
+  },
+  "notFound": {
+    "heading": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée. Veuillez vérifier l'URL ou revenir à la page d'accueil.",
+    "homeCta": "Retour à l'accueil",
+    "propertiesCta": "Voir les propriétés"
+  }
+}

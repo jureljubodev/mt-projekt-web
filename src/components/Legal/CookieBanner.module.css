@@ -1,0 +1,63 @@
+.banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1350;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  background:
+    radial-gradient(150% 120% at 90% 100%, rgba(201, 168, 76, 0.2), transparent 55%),
+    linear-gradient(135deg, rgba(15, 27, 45, 0.98), rgba(28, 46, 69, 0.98));
+  color: var(--pm-white);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(7, 14, 25, 0.45);
+  padding: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.textWrap {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  font-size: 1.1rem;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.actions :global(.btn) {
+  padding: 0.58rem 1rem;
+  font-size: 0.72rem;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1rem 1.15rem;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+}

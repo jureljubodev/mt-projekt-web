@@ -1,0 +1,242 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Page header ── */
+.pageHeader {
+  background: linear-gradient(135deg, var(--pm-navy) 0%, #0a3060 100%);
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+}
+
+.pageHeader h1 {
+  color: var(--pm-white);
+}
+
+.headerDesc {
+  max-width: 52ch;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65) !important;
+  margin-top: 1rem;
+}
+
+/* ── Content ── */
+.content {
+  background-color: var(--pm-off-white);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── Info column ── */
+.infoTitle {
+  color: var(--pm-navy);
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.infoIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pm-gold);
+  margin-bottom: 0.3rem;
+}
+
+.infoItem p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--pm-gray);
+}
+
+.infoLink {
+  font-size: 0.9rem;
+  color: var(--pm-navy);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.infoLink:hover {
+  color: var(--pm-gold);
+}
+
+/* ── Form ── */
+.formCol {
+  background-color: var(--pm-white);
+  border-radius: 4px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  color: var(--pm-navy);
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--pm-dark);
+}
+
+.label span {
+  color: var(--pm-gold);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--pm-dark);
+  background-color: var(--pm-off-white);
+  border: 1px solid var(--pm-border);
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--pm-gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ── Error message ── */
+.errorMsg {
+  padding: 0.75rem 1rem;
+  background-color: #FFF3F3;
+  border: 1px solid #FFCDD2;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  color: #C62828;
+}
+
+/* ── Success message ── */
+.successMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  gap: 0.75rem;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--pm-gold);
+  color: var(--pm-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.successMsg h3 {
+  color: var(--pm-navy);
+  margin: 0;
+}
+
+.successMsg p {
+  max-width: 36ch;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .formCol {
+    padding: 1.5rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    gap: 3rem;
+  }
+}

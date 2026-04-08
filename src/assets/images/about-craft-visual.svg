@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Projekt MT craft visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1b2d"/>
+      <stop offset="100%" stop-color="#19324f"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+
+  <rect x="70" y="80" width="540" height="730" rx="16" fill="#ffffff" fill-opacity="0.06"/>
+  <rect x="120" y="140" width="300" height="180" rx="10" fill="#e8d5a3" fill-opacity="0.2"/>
+  <rect x="450" y="140" width="120" height="180" rx="10" fill="#ffffff" fill-opacity="0.14"/>
+  <rect x="120" y="350" width="450" height="2" fill="#c9a84c" fill-opacity="0.8"/>
+  <rect x="120" y="390" width="450" height="2" fill="#c9a84c" fill-opacity="0.6"/>
+  <rect x="120" y="430" width="350" height="2" fill="#c9a84c" fill-opacity="0.45"/>
+
+  <g transform="translate(660 120)">
+    <rect x="0" y="0" width="470" height="310" rx="16" fill="#ffffff" fill-opacity="0.09"/>
+    <path d="M40 230 L130 120 L250 170 L360 90 L430 170" stroke="#8fb7d6" stroke-width="4" fill="none"/>
+    <path d="M40 260 L130 150 L250 205 L360 125 L430 200" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" fill="none"/>
+    <circle cx="130" cy="120" r="8" fill="#c9a84c"/>
+    <circle cx="250" cy="170" r="8" fill="#c9a84c"/>
+    <circle cx="360" cy="90" r="8" fill="#c9a84c"/>
+  </g>
+
+  <g transform="translate(660 470)">
+    <rect x="0" y="0" width="470" height="280" rx="16" fill="#ffffff" fill-opacity="0.09"/>
+    <rect x="38" y="34" width="185" height="185" rx="8" fill="#ffffff" fill-opacity="0.14"/>
+    <rect x="238" y="34" width="88" height="185" rx="8" fill="#e8d5a3" fill-opacity="0.3"/>
+    <rect x="340" y="34" width="92" height="185" rx="8" fill="#ffffff" fill-opacity="0.14"/>
+    <text x="36" y="252" font-family="Georgia, serif" font-size="54" fill="#c9a84c" letter-spacing="2">MT</text>
+  </g>
+
+  <text x="120" y="760" font-family="Georgia, serif" font-size="68" fill="#ffffff" fill-opacity="0.2" letter-spacing="3">PROJEKT MT</text>
+</svg>

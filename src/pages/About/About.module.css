@@ -1,0 +1,252 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Page header ── */
+.pageHeader {
+  background: linear-gradient(135deg, var(--pm-navy) 0%, #0a3060 100%);
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+}
+
+.pageHeader h1 {
+  color: var(--pm-white);
+}
+
+.headerDesc {
+  max-width: 52ch;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65) !important;
+  margin-top: 1rem;
+}
+
+/* ── Story section ── */
+.story {
+  background-color: var(--pm-white);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.storyText h2 {
+  margin-bottom: 0;
+}
+
+.storyText p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+.paragraph {
+  margin-bottom: 1.25rem !important;
+}
+
+.storyMedia {
+  position: relative;
+}
+
+.imagePlaceholder {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(145deg, var(--pm-navy) 0%, #1a3a5c 100%);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.storyVisual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.45s ease;
+}
+
+.storyMedia:hover .storyVisual {
+  transform: scale(1.05);
+}
+
+.yearBadge {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  background-color: var(--pm-gold);
+  color: var(--pm-navy);
+  padding: 1.25rem 1.75rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.yearBadge strong {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.yearBadge span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Values ── */
+.valuesSection {
+  background-color: var(--pm-off-white);
+}
+
+.sectionCenter {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.valueCard {
+  background-color: var(--pm-white);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--pm-gold);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.valueIcon {
+  font-size: 1.5rem;
+  color: var(--pm-gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.valueTitle {
+  font-size: 1.05rem;
+  color: var(--pm-navy);
+  margin-bottom: 0.75rem;
+}
+
+.valueDesc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--pm-gray);
+}
+
+/* ── Team ── */
+.teamSection {
+  background-color: var(--pm-white);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.teamCard {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid var(--pm-border);
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.teamCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.teamAvatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--pm-navy);
+  color: var(--pm-gold);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.teamName {
+  font-size: 1.1rem;
+  color: var(--pm-navy);
+  margin-bottom: 0.25rem;
+}
+
+.teamRole {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pm-gold) !important;
+  margin-bottom: 0.75rem;
+}
+
+.teamDesc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--pm-gray);
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .imagePlaceholder {
+    aspect-ratio: 16 / 9;
+  }
+
+  .yearBadge {
+    position: static;
+    margin-top: 1rem;
+    align-self: flex-start;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .storyGrid {
+    gap: 2.5rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}

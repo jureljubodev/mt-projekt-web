@@ -1,0 +1,531 @@
+{
+  "common": {
+    "available": "Dostupné",
+    "sold": "Prodáno",
+    "learnMore": "Více informací →",
+    "seeAll": "Všechny nabídky →",
+    "founded": "Založení",
+    "copyright": "Projekt MT d.o.o. – Všechna práva vyhrazena."
+  },
+  "nav": {
+    "home": "Domů",
+    "properties": "Nabídka",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "cta": "Kontaktujte nás"
+  },
+  "footer": {
+    "tagline": "Výstavba a prodej luxusních bytů a apartmánů na severním Jadranu a v Záhřebu.",
+    "navCol": "Navigace",
+    "projectsCol": "Projekty"
+  },
+  "home": {
+    "heroLabel": "Výstavba & Prodej Nemovitostí",
+    "heroTitle1": "Luxusní bydlení",
+    "heroTitle2": "na pobřeží Jadranu",
+    "heroSubtitle": "Projekt MT – přední stavitelé bytů a apartmánů na severním Jadranu a v Záhřebu od roku 2001.",
+    "heroCta1": "Zobrazit nabídku",
+    "heroCta2": "O nás",
+    "stat1": "Let zkušeností",
+    "stat2": "Dokončených projektů",
+    "stat3": "Spokojených rodin",
+    "stat4": "Oblasti zaměření",
+    "aboutLabel": "Kdo jsme",
+    "aboutHeading": "Renomovaná společnost s vynikajícími referencemi",
+    "aboutP1": "Obchodní společnost PROJEKT MT d.o.o. Záhřeb byla založena v roce 2001 Mario Tadićem, který ji svou prací proměnil v renomovanou a stabilní společnost s vynikajícími referencemi.",
+    "aboutP2": "Společnost se primárně zabývá výstavbou bytů a apartmánů a čítá řadu objektů v oblasti severního Jadranu a města Záhřebu. Jako přední stavitelé jsme proslulí výstavbou luxusních vil s progresivním přístupem a precizností.",
+    "aboutCta": "Zjistit více",
+    "projectsLabel": "Naše projekty",
+    "projectsHeading": "Vybrané projekty",
+    "ctaLabel": "Váš nový domov",
+    "ctaHeading": "Máte zájem o nemovitost?",
+    "ctaText": "Kontaktujte nás pro více informací o dostupných projektech nebo domluvte si prohlídku.",
+    "ctaBtn": "Kontaktujte nás"
+  },
+  "projects": {
+    "villaAzzuro": {
+      "title": "Villa Azzuro Malinska",
+      "location": "Malinska, ostrov Krk",
+      "shortDesc": "Luxusní vila s výhledem na moře v klidné části Malinské.",
+      "fullDesc": "Luxusní vila situovaná na jednom z nejatraktivnějších míst podél nádherného pobřeží severního Jadranu. Ultramoderní objekt nejvyšší kvality a provedení.",
+      "features": [
+        "Blízko moře",
+        "Luxusně vybaveno",
+        "Parkování",
+        "Terasa"
+      ],
+      "materials": [
+        "Blízko moře",
+        "Luxusně vybaveno",
+        "Parkování",
+        "Terasa"
+      ]
+    },
+    "sesvete": {
+      "title": "Projekt Sesvete",
+      "location": "Sesvete, Záhřeb",
+      "shortDesc": "Moderní rezidenční komplex v Sesvetách s vynikajícím výhledem.",
+      "fullDesc": "Moderní rezidenční komplex v Sesvetách, části Záhřebu která zaznamenává neustálý rozvoj. Vynikající infrastruktura a propojení s centrem Záhřebu.",
+      "features": [
+        "Blízko centra",
+        "Moderní design",
+        "Garáž",
+        "Zelené plochy"
+      ],
+      "materials": [
+        "Blízko centra",
+        "Moderní design",
+        "Garáž",
+        "Zelené plochy"
+      ]
+    },
+    "villeKrkA": {
+      "title": "Ville KRK – Objekt A",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Exkluzivní rezidenční objekty na ostrově Krk v blízkosti moře.",
+      "fullDesc": "Exkluzivní rezidenční objekt na ostrově Krk v bezprostřední blízkosti moře. Prémiové materiály a soudobá architektura v souladu s přírodou.",
+      "features": [
+        "Výhled na moře",
+        "Soukromý bazén",
+        "Prémiové materiály",
+        "Chytrý dům"
+      ],
+      "materials": [
+        "Výhled na moře",
+        "Soukromý bazén",
+        "Prémiové materiály",
+        "Chytrý dům"
+      ]
+    },
+    "villeKrkB": {
+      "title": "Ville KRK – Objekt B",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Druhý rezidenční objekt v rámci projektu Ville KRK.",
+      "fullDesc": "Druhý rezidenční objekt v rámci projektu Ville KRK. Stejně vysoké stavební standardy s mírně odlišnými půdorysnými řešeními.",
+      "features": [
+        "Výhled na moře",
+        "Soukromý bazén",
+        "Zahrada",
+        "Klimatizace"
+      ],
+      "materials": [
+        "Výhled na moře",
+        "Soukromý bazén",
+        "Zahrada",
+        "Klimatizace"
+      ]
+    },
+    "qubo4": {
+      "title": "Villa Malinska QUBO4",
+      "location": "Malinska, ostrov Krk",
+      "shortDesc": "Moderně řešená vila s kubickými architektonickými motivy v srdci Malinské.",
+      "fullDesc": "Moderně řešená vila s kubickými architektonickými motivy v srdci Malinské. Atraktivní design, který se dokonale začleňuje do středomořského prostředí.",
+      "features": [
+        "Moderní design",
+        "Blízko pláže",
+        "Terasa",
+        "Grilování"
+      ],
+      "materials": [
+        "Moderní design",
+        "Blízko pláže",
+        "Terasa",
+        "Grilování"
+      ]
+    },
+    "malinska2": {
+      "title": "Villa Malinska 2",
+      "location": "Malinska, ostrov Krk",
+      "shortDesc": "Druhý projekt v Malinské synonymní s kvalitou stavby.",
+      "fullDesc": "Druhý projekt v Malinské, který se stal synonymem pro kvalitu stavby a pozornost k detailům v luxusním segmentu.",
+      "features": [
+        "Bazén",
+        "Blízko moře",
+        "Terasa",
+        "Parkování"
+      ],
+      "materials": [
+        "Bazén",
+        "Blízko moře",
+        "Terasa",
+        "Parkování"
+      ]
+    },
+    "malinska1": {
+      "title": "Villa Malinska 1",
+      "location": "Malinska, ostrov Krk",
+      "shortDesc": "Průkopnický projekt Projekt MT na ostrově Krk.",
+      "fullDesc": "Průkopnický projekt Projekt MT na ostrově Krk, který položil základy pro všechny budoucí projekty společnosti na jadranském pobřeží.",
+      "features": [
+        "Blízko moře",
+        "Upravená zahrada",
+        "Garáž",
+        "Terasa s výhledem"
+      ],
+      "materials": [
+        "Blízko moře",
+        "Upravená zahrada",
+        "Garáž",
+        "Terasa s výhledem"
+      ]
+    },
+    "selce2": {
+      "title": "Apartmány Selce 2",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Luxusní apartmány v malebném letovišti Selce, 3 km jihovýchodně od Crikvenice, s možností vlastního bazénu.",
+      "fullDesc": "Selce je malé turistické místo v zálivu Kvarner, 3 km jihovýchodně od Crikvenice, proslulé písečnou pláží a dlouhou turistickou tradicí. Apartmány jsou postaveny z prvotřídních materiálů s řadou moderních prvků.",
+      "features": [
+        "2 min. k moři",
+        "Soukromý bazén možný",
+        "Klimatizace",
+        "Exotický parket",
+        "El. žaluzie"
+      ],
+      "materials": [
+        "2 min. k moři",
+        "Soukromý bazén možný",
+        "Klimatizace",
+        "Exotický parket",
+        "El. žaluzie"
+      ]
+    },
+    "siloKrk": {
+      "title": "Apartmány Šilo Krk",
+      "location": "Šilo, ostrov Krk",
+      "shortDesc": "Apartmány v malebné chráněné zátoce Stipanja na ostrově Krk s písečnou pláží a čistým mořem.",
+      "fullDesc": "Šilo je největší sídlo s nejdelší turistickou tradicí v obci Dobrinj, malebně situované v zátoce Stipanja poblíž Crikvenice. Kvalitní apartmány, pouhých 5 minut chůze od pláže.",
+      "features": [
+        "5 min. k moři",
+        "Soukromý bazén možný",
+        "Klimatizace",
+        "Italská keramika",
+        "PVC okna"
+      ],
+      "materials": [
+        "5 min. k moři",
+        "Soukromý bazén možný",
+        "Klimatizace",
+        "Italská keramika",
+        "PVC okna"
+      ]
+    },
+    "bukovacZagreb": {
+      "title": "Bukovac Záhřeb",
+      "location": "Gornji Bukovac, Záhřeb",
+      "shortDesc": "Exkluzivní byty v rezidenční vile na Gornjím Bukovci s výhledem na Záhřeb a vlastní garáží.",
+      "fullDesc": "Byty v exkluzivní rezidenční vile na Gornjím Bukovci ve špičkovém standardu: karta na dveře, alarm, videotelefon, el. žaluzie, vířivá vana, sauna, podlahové vytápění, přírodní kamenné stěny a designové radiátory. Vlastní garáž a 2 parkovací místa.",
+      "features": [
+        "Vlastní garáž",
+        "Vířivka & sauna",
+        "Kamerový systém",
+        "Výhled na Záhřeb",
+        "Centrální vysavač"
+      ],
+      "materials": [
+        "Vlastní garáž",
+        "Vířivka & sauna",
+        "Kamerový systém",
+        "Výhled na Záhřeb",
+        "Centrální vysavač"
+      ]
+    },
+    "dramaljApartmani": {
+      "title": "Apartmány Dramalj",
+      "location": "Dramalj, Crikvenica",
+      "shortDesc": "Exkluzivní apartmány v klidné poloze v Dramlji s nádherným výhledem na moře.",
+      "fullDesc": "Dramalj je turistické místo poblíž Crikvenice. Exkluzivní apartmány v klidné poloze s výhledem na moře, postavené z kvalitních materiálů s klimatizací v každé místnosti a italskými sanitárními potřebami.",
+      "features": [
+        "Výhled na moře",
+        "Klimatizované pokoje",
+        "Italská keramika",
+        "INOX zábradlí",
+        "Centrální vysavač"
+      ],
+      "materials": [
+        "Výhled na moře",
+        "Klimatizované pokoje",
+        "Italská keramika",
+        "INOX zábradlí",
+        "Centrální vysavač"
+      ]
+    },
+    "perjavicaZagreb": {
+      "title": "Perjavica Záhřeb",
+      "location": "Perjavica, Záhřeb",
+      "shortDesc": "Moderní městská vila na atraktivním svahu Záhřebu s panoramatickým výhledem na město ze tří stran.",
+      "fullDesc": "Na Perjavici, nově objeveném atraktivním místě na záhřebském svahu, jsme postavili moderní městskou vilu. Každý byt má vlastní garáž a budova zahrnuje mini Fitness-Wellness prostor s vířivkou a saunou.",
+      "features": [
+        "Vlastní garáž",
+        "Fitness-Wellness",
+        "Vířivka & sauna",
+        "Výhled na Záhřeb",
+        "Klimatizace Daikin"
+      ],
+      "materials": [
+        "Vlastní garáž",
+        "Fitness-Wellness",
+        "Vířivka & sauna",
+        "Výhled na Záhřeb",
+        "Klimatizace Daikin"
+      ]
+    },
+    "qubo3": {
+      "title": "Qubo 3 Malinska",
+      "location": "Malinska, ostrov Krk",
+      "shortDesc": "Tři luxusně vybavené byty s přelivovými bazény v klidném zeleném prostředí Malinské.",
+      "fullDesc": "Luxusní byty Qubo 3 se nacházejí na ostrově Krk v Malinské, v klidném zeleném prostředí blízko moře. Komplex tvoří byt 1 (156 m²) se soukromou zahradou a bazénem, byt 2 (78 m²) penthouse a byt 3 (113 m²) se zahradou a bazénem. Přelivové bazény s LED multicolor osvětlením, panoramatické posuvné stěny a invertorová klimatizace A+.",
+      "features": [
+        "Přelivový bazén LED",
+        "Klimatizace A+",
+        "Panoram. posuvné stěny",
+        "Zahradní úpravy",
+        "Kamerový systém"
+      ],
+      "materials": [
+        "Přelivový bazén LED",
+        "Klimatizace A+",
+        "Panoram. posuvné stěny",
+        "Zahradní úpravy",
+        "Kamerový systém"
+      ]
+    },
+    "santoriniCrikvenica": {
+      "title": "Santorini Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Moderní luxusní apartmány v Crikvenici – přízemní se soukromou zahradou a bazénem, horní se sdíleným bazénem.",
+      "fullDesc": "Crikvenica leží v Kvarnerském zálivu 33 km od Rijéky s více než stoletou turistickou tradicí. Luxusní apartmány s exotickým parketem, mramorovým schodištěm, italskou sanitou a klimatizací.",
+      "features": [
+        "Bazén u každého bytu",
+        "Exotický parket",
+        "Mramorové schodiště",
+        "Klimatizace",
+        "PVC okna"
+      ],
+      "materials": [
+        "Bazén u každého bytu",
+        "Exotický parket",
+        "Mramorové schodiště",
+        "Klimatizace",
+        "PVC okna"
+      ]
+    },
+    "santoriniNjivice": {
+      "title": "Santorini Njivice",
+      "location": "Njivice, ostrov Krk",
+      "shortDesc": "Luxusní moderní vila se čtyřmi bytovými jednotkami, každá s vlastním bazénem, 400 m od moře na ostrově Krk.",
+      "fullDesc": "Luxusní moderní vila s výhledem na moře na pobřeží severního Jadranu na ostrově Krk. Čtyři bytové jednotky – přízemní s vlastní zahradou a bazénem, horní s střešní terasou a bazénem. Vzdálenost od moře: 400 m.",
+      "features": [
+        "Vlastní bazén na byt",
+        "Střešní terasa",
+        "Exotický parket",
+        "Mramorové schodiště",
+        "400 m k moři"
+      ],
+      "materials": [
+        "Vlastní bazén na byt",
+        "Střešní terasa",
+        "Exotický parket",
+        "Mramorové schodiště",
+        "400 m k moři"
+      ]
+    },
+    "selceApartmani": {
+      "title": "Apartmány Selce",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Luxusně vybavené apartmány v malebné zátoce Selce, 35 km jižně od Rijéky, s krásným výhledem na moře.",
+      "fullDesc": "Selce leží v malebné zátoce poblíž Crikvenice, 35 km jižně od Rijéky. Exotický parket, klimatizace Daikin, italská sanita a centrální vysavače. Komplex zahrnuje garáže a sklady.",
+      "features": [
+        "Výhled na moře",
+        "Garáž & sklad",
+        "Exotický parket",
+        "Klimatizace Daikin",
+        "Centrální vysavač"
+      ],
+      "materials": [
+        "Výhled na moře",
+        "Garáž & sklad",
+        "Exotický parket",
+        "Klimatizace Daikin",
+        "Centrální vysavač"
+      ]
+    },
+    "villaAzzuroCrikvenica": {
+      "title": "Villa Azzuro Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Komplex ultraluxusních vil obložených kamenem z Brače v první řadě u moře, 9 luxusních bytů 120–160 m².",
+      "fullDesc": "Devět ultra moderních luxusních bytů (120–160 m²) v první řadě u moře s krásnými plážemi. Každá vila má tři byty a podzemní garáž s přímým výtahem. Obloženy kamenem z Brače; vybrané byty mají soukromou zahradu a bazén.",
+      "features": [
+        "1. řada u moře",
+        "Kámen z Brače",
+        "Podzemní garáž výtah",
+        "Bazén možný",
+        "Prémiové materiály"
+      ],
+      "materials": [
+        "1. řada u moře",
+        "Kámen z Brače",
+        "Podzemní garáž výtah",
+        "Bazén možný",
+        "Prémiové materiály"
+      ]
+    },
+    "villaVerdeCrikvenica": {
+      "title": "Villa Verde Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Ultra moderní vily obložené kamenem z Brače v první řadě u moře s podzemní garáží a přímým výtahem.",
+      "fullDesc": "Devět ultra moderních luxusních bytů (120–160 m²) přímo u moře v první řadě. Každá vila má tři byty a podzemní garáž s přímým výtahem. Obloženy kamenem z Brače; vybrané byty se zahradou a bazénem.",
+      "features": [
+        "1. řada u moře",
+        "Kámen z Brače",
+        "Podzemní garáž výtah",
+        "Bazén možný",
+        "Exkluzivní design"
+      ],
+      "materials": [
+        "1. řada u moře",
+        "Kámen z Brače",
+        "Podzemní garáž výtah",
+        "Bazén možný",
+        "Exkluzivní design"
+      ]
+    },
+    "villaZorcici": {
+      "title": "Villa Zorčići",
+      "location": "Zorčići",
+      "shortDesc": "Luxusní rodinný dům s bazénem v idylické vesnici Zorčići.",
+      "fullDesc": "Luxusní rodinný dům s bazénem v idylické vesnici Zorčići, obklopený bujnou přírodou s klidem a soukromím.",
+      "features": [
+        "Soukromý bazén",
+        "Rodinná vila",
+        "Klid & soukromí",
+        "Bujná příroda"
+      ],
+      "materials": [
+        "Soukromý bazén",
+        "Rodinná vila",
+        "Klid & soukromí",
+        "Bujná příroda"
+      ]
+    },
+    "saintMartinKostelj": {
+      "title": "Villas Saint Martin",
+      "location": "Kostelj, Crikvenica",
+      "shortDesc": "Čtyři luxusní rodinné vily v krásném zázemí Crikvenice, 5 km od moře, s bazénem, saunou a italským nábytkem.",
+      "fullDesc": "Čtyři luxusní rodinné vily v zázemí Crikvenice, 5 km od moře a poblíž jezera Tribalj. Každá vila zahrnuje 200 m² obytné plochy s 650 m² pozemku, tři ložnice se šatníkem, dvě koupelny, venkovní bazén, vnitřní a venkovní vířivku, saunu, letní kuchyni a krb. Kompletně vybaveny italským designovým nábytkem.",
+      "features": [
+        "Venkovní bazén",
+        "Sauna & vířivka",
+        "Letní kuchyně & krb",
+        "Výhled na moře & jezero",
+        "Italský nábytek"
+      ],
+      "materials": [
+        "Venkovní bazén",
+        "Sauna & vířivka",
+        "Letní kuchyně & krb",
+        "Výhled na moře & jezero",
+        "Italský nábytek"
+      ]
+    },
+    "pavus": {
+      "title": "Villa Malinska Pavus",
+      "location": "Malinska, ostrov Krk",
+      "shortDesc": "Elegantní vila inspirovaná středomořským architektonickým stylem.",
+      "fullDesc": "Elegantní vila inspirovaná středomořským architektonickým stylem s použitím prémiových materiálů a vybavení pro dlouhodobou kvalitu a komfort.",
+      "features": [
+        "Bazén",
+        "Středomořský styl",
+        "Terasa",
+        "Klimatizace"
+      ],
+      "materials": [
+        "Bazén",
+        "Středomořský styl",
+        "Terasa",
+        "Klimatizace"
+      ]
+    }
+  },
+  "properties": {
+    "label": "Naše Nabídka",
+    "heading": "Projekty & Nemovitosti",
+    "description": "Prohlédněte si naše projekty na severním Jadranu a v Záhřebu. Každý objekt odráží naše nekompromisní standardy v oblasti stavebnictví a designu.",
+    "availableHeading": "Dostupné nemovitosti",
+    "soldHeading": "Realizované projekty"
+  },
+  "about": {
+    "label": "O nás",
+    "heading": "Projekt MT d.o.o.",
+    "description": "Renomovaná a stabilní stavební společnost s vynikajícími referencemi, založená v Záhřebu v roce 2001.",
+    "storyLabel": "Náš příběh",
+    "storyHeading": "Více než 20 let dokonalosti ve stavebnictví",
+    "storyP1": "Obchodní společnost PROJEKT MT d.o.o. Záhřeb byla v roce 2001 založena Mario Tadićem, který ji svou prací proměnil v renomovanou a stabilní společnost s vynikajícími referencemi.",
+    "storyP2": "Společnost se primárně zabývá výstavbou bytů a apartmánů s četnými nemovitostmi na severním Jadranu a v Záhřebu. Naše ultramoderní objekty nejvyšší kvality se nacházejí na atraktivních místech podél nádherného pobřeží.",
+    "storyP3": "Jako přední stavitelé je PROJEKT MT d.o.o. proslulá výstavbou luxusních vil. Sledujeme progresivní přístup s jedinečnou strategií řemeslnosti a preciznosti při dodržování stavebních standardů.",
+    "storyP4": "Bez ohledu na rozsah projektu, nesrovnatelné odhodlání společnosti a praktický přístup ke stavebnímu procesu zajišťují, že se každý projekt vyznačuje.",
+    "valuesLabel": "Naše hodnoty",
+    "valuesHeading": "Co nás dělá výjimečnými",
+    "value1Title": "Kvalita materiálů",
+    "value1Desc": "Používáme výhradně prémiové materiály a vybavení, které zaručují dlouhodobou kvalitu, komfort a estetickou přitažlivost.",
+    "value2Title": "Přesnost provedení",
+    "value2Desc": "Každý detail je pečlivě naplánován a proveden. Včasné dodání a dodržení termínů je naším závazkem vůči klientům.",
+    "value3Title": "Luxusní design",
+    "value3Desc": "Náš tým architektů a interiérových designérů vytváří objekty v moderním architektonickém stylu, které se dokonale začleňují do svého okolí.",
+    "value4Title": "Spolehlivost",
+    "value4Desc": "Společnost zaznamenávající exponenciální růst od svého vzniku díky důvěře klientů a síti spokojených vlastníků nemovitostí.",
+    "teamLabel": "Náš tým",
+    "teamHeading": "Odbornost za každým projektem",
+    "team1Name": "Mario Tadić",
+    "team1Role": "Zakladatel & ředitel",
+    "team1Desc": "Zakladatel společnosti, který od roku 2001 vybudoval renomovanou a stabilní stavební společnost známou svou kvalitou.",
+    "team2Name": "Architektonický tým",
+    "team2Role": "Architektura & design",
+    "team2Desc": "Zkušení architekti, kteří vytvářejí soudobé objekty s respektem k místním tradicím a přírodnímu prostředí.",
+    "team3Name": "Stavební tým",
+    "team3Role": "Stavba & dozor",
+    "team3Desc": "Zkušený tým stavebních odborníků, který každý projekt realizuje podle nejvyšších standardů oboru."
+  },
+  "contact": {
+    "label": "Kontakt",
+    "heading": "Kontaktujte nás",
+    "description": "Máte otázky ohledně našich projektů nebo byste chtěli domluvit prohlídku? Obraťte se na nás – rádi vám pomůžeme.",
+    "infoTitle": "Informace",
+    "addressLabel": "Adresa",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-mail",
+    "hoursLabel": "Pracovní doba",
+    "hoursLine1": "Po – Pá: 09:00 – 17:00",
+    "hoursLine2": "So: 09:00 – 13:00",
+    "formTitle": "Odeslat poptávku",
+    "nameLabel": "Jméno a příjmení",
+    "namePlaceholder": "Vaše jméno",
+    "emailFieldLabel": "E-mailová adresa",
+    "emailPlaceholder": "vas@email.cz",
+    "phoneFieldLabel": "Telefonní číslo",
+    "phonePlaceholder": "+385 ...",
+    "subjectLabel": "Předmět",
+    "subjectDefault": "Vyberte projekt...",
+    "subjectOther": "Jiné",
+    "messageLabel": "Zpráva",
+    "messagePlaceholder": "Vaše zpráva nebo dotaz...",
+    "submitBtn": "Odeslat zprávu",
+    "successTitle": "Zpráva úspěšně odeslána!",
+    "successText": "Děkujeme za váš dotaz. Ozveme se vám co nejdříve.",
+    "successBtn": "Odeslat novou zprávu",
+    "errorRequired": "Vyplňte prosím všechna povinná pole.",
+    "errorEmail": "Zadejte prosím platnou e-mailovou adresu."
+  },
+  "projectPage": {
+    "overview": "Přehled projektu",
+    "gallery": "Galerie",
+    "otherProjects": "Další projekty",
+    "loading": "Načítání obrázků...",
+    "materials": "Materialy a vybaveni"
+  },
+  "notFound": {
+    "heading": "Stránka nenalezena",
+    "description": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta. Zkontrolujte URL nebo se vraťte na úvodní stránku.",
+    "homeCta": "Zpět na úvod",
+    "propertiesCta": "Zobrazit nabídku"
+  }
+}

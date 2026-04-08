@@ -1,0 +1,531 @@
+{
+  "common": {
+    "available": "Elérhető",
+    "sold": "Eladva",
+    "learnMore": "Több információ →",
+    "seeAll": "Összes ajánlat →",
+    "founded": "Alapítás",
+    "copyright": "Projekt MT d.o.o. – Minden jog fenntartva."
+  },
+  "nav": {
+    "home": "Főoldal",
+    "properties": "Ajánlatok",
+    "about": "Rólunk",
+    "contact": "Kapcsolat",
+    "cta": "Vegye fel velünk a kapcsolatot"
+  },
+  "footer": {
+    "tagline": "Luxuslakások és apartmanok építése és értékesítése az Észak-Adrián és Zágrábban.",
+    "navCol": "Navigáció",
+    "projectsCol": "Projektek"
+  },
+  "home": {
+    "heroLabel": "Ingatlanépítés & Értékesítés",
+    "heroTitle1": "Luxus életstílus",
+    "heroTitle2": "az Adriai-tenger partján",
+    "heroSubtitle": "Projekt MT – prémium lakásépítők az Észak-Adrián és Zágrábban 2001 óta.",
+    "heroCta1": "Ajánlatok megtekintése",
+    "heroCta2": "Rólunk",
+    "stat1": "Év tapasztalat",
+    "stat2": "Befejezett projektek",
+    "stat3": "Elégedett családok",
+    "stat4": "Kiemelt régiók",
+    "aboutLabel": "Kik vagyunk",
+    "aboutHeading": "Elismert cég kiváló referenciákkal",
+    "aboutP1": "A PROJEKT MT d.o.o. Zágráb céget 2001-ben alapította Mario Tadić, aki munkájával elismert és stabil, kiváló referenciákkal rendelkező céggé alakította.",
+    "aboutP2": "A cég elsősorban lakások és apartmanok építésével foglalkozik, és számos ingatlannal rendelkezik az Észak-Adrián és Zágrábban. Csúcsminőségű kivitelezőként luxusvillák építéséről vagyunk ismertek, progresszív szemlélettel és precizitással.",
+    "aboutCta": "Tudjon meg többet",
+    "projectsLabel": "Projektjeink",
+    "projectsHeading": "Kiemelt projektek",
+    "ctaLabel": "Az Ön új otthona",
+    "ctaHeading": "Érdekli egy ingatlan?",
+    "ctaText": "Vegye fel velünk a kapcsolatot az elérhető projektekkel kapcsolatos további információkért, vagy szervezzen megtekintést.",
+    "ctaBtn": "Kapcsolatfelvétel"
+  },
+  "projects": {
+    "villaAzzuro": {
+      "title": "Villa Azzuro Malinska",
+      "location": "Malinska, Krk sziget",
+      "shortDesc": "Luxusvilla tengerre néző kilátással Malinska csendes részén.",
+      "fullDesc": "Luxusvilla, amely az Észak-Adriai tengerpart egyik legelőkelőbb helyén található. Ultramodern épület a legmagasabb minőségű kivitelezéssel.",
+      "features": [
+        "Tenger közelében",
+        "Luxusberendezés",
+        "Parkoló",
+        "Terasz"
+      ],
+      "materials": [
+        "Tenger közelében",
+        "Luxusberendezés",
+        "Parkoló",
+        "Terasz"
+      ]
+    },
+    "sesvete": {
+      "title": "Projekt Sesvete",
+      "location": "Sesvete, Zágráb",
+      "shortDesc": "Modern lakókomplexum Sesvetéban kiváló kilátással a környékre.",
+      "fullDesc": "Modern lakókomplexum Sesvetéban, Zágráb folyamatosan fejlődő részén. Kiváló infrastruktúra és összeköttetés Zágráb belvárosával.",
+      "features": [
+        "Belváros közelében",
+        "Modern dizájn",
+        "Garázs",
+        "Zöld területek"
+      ],
+      "materials": [
+        "Belváros közelében",
+        "Modern dizájn",
+        "Garázs",
+        "Zöld területek"
+      ]
+    },
+    "villeKrkA": {
+      "title": "Ville KRK – A épület",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Exkluzív lakóingatlanok Krk szigetén a tenger közelében.",
+      "fullDesc": "Exkluzív lakóépület Krk szigetén, a tenger közvetlen közelében. Prémium anyagok és kortárs építészet harmóniában a természettel.",
+      "features": [
+        "Tengerre néző kilátás",
+        "Magánmedence",
+        "Prémium anyagok",
+        "Okosotthon"
+      ],
+      "materials": [
+        "Tengerre néző kilátás",
+        "Magánmedence",
+        "Prémium anyagok",
+        "Okosotthon"
+      ]
+    },
+    "villeKrkB": {
+      "title": "Ville KRK – B épület",
+      "location": "Krk, Kvarner",
+      "shortDesc": "A Ville KRK projekt második lakóépülete.",
+      "fullDesc": "A Ville KRK projekt második lakóépülete. Ugyanolyan magas építési szabványok, kissé eltérő alaprajzi megoldásokkal.",
+      "features": [
+        "Tengerre néző kilátás",
+        "Magánmedence",
+        "Kert",
+        "Légkondicionáló"
+      ],
+      "materials": [
+        "Tengerre néző kilátás",
+        "Magánmedence",
+        "Kert",
+        "Légkondicionáló"
+      ]
+    },
+    "qubo4": {
+      "title": "Villa Malinska QUBO4",
+      "location": "Malinska, Krk sziget",
+      "shortDesc": "Modern tervezésű villa köbös építészeti motívumokkal Malinska szívében.",
+      "fullDesc": "Modern tervezésű villa köbös építészeti motívumokkal Malinska szívében. Vonzó dizájn, amely tökéletesen illeszkedik a mediterrán környezetbe.",
+      "features": [
+        "Modern dizájn",
+        "Strand közelében",
+        "Terasz",
+        "Grillezési zóna"
+      ],
+      "materials": [
+        "Modern dizájn",
+        "Strand közelében",
+        "Terasz",
+        "Grillezési zóna"
+      ]
+    },
+    "malinska2": {
+      "title": "Villa Malinska 2",
+      "location": "Malinska, Krk sziget",
+      "shortDesc": "A második malinskai projekt, amely a minőségi építkezés szinonimájává vált.",
+      "fullDesc": "A második malinskai projekt, amely a minőségi építkezés és a részletekre való odafigyelés szinonimájává vált a luxus szegmensben.",
+      "features": [
+        "Medence",
+        "Tenger közelében",
+        "Terasz",
+        "Parkoló"
+      ],
+      "materials": [
+        "Medence",
+        "Tenger közelében",
+        "Terasz",
+        "Parkoló"
+      ]
+    },
+    "malinska1": {
+      "title": "Villa Malinska 1",
+      "location": "Malinska, Krk sziget",
+      "shortDesc": "Úttörő projekt Krk szigetén.",
+      "fullDesc": "Úttörő projekt Krk szigetén, amely megalapozta a cég összes jövőbeli fejlesztését az adriai parton.",
+      "features": [
+        "Tenger közelében",
+        "Gondozott kert",
+        "Garázs",
+        "Kilátásos terasz"
+      ],
+      "materials": [
+        "Tenger közelében",
+        "Gondozott kert",
+        "Garázs",
+        "Kilátásos terasz"
+      ]
+    },
+    "selce2": {
+      "title": "Selce 2 Apartmanok",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Luxusapartmanok a festői Selce üdülőhelyen, Crikvenicától 3 km-re délkeletre, privát medence lehetőségével.",
+      "fullDesc": "Selce a Kvarner-öböl kis turisztikai helysége, Crikvenicától 3 km-re délkeletre, homokos strandjaival és évszázados turisztikai hagyományaival. Az apartmanok prémium anyagokból épültek, számos modern részlettel.",
+      "features": [
+        "2 perc a tengertől",
+        "Privát medence (opció)",
+        "Légkondicionálás",
+        "Egzotikus parketta",
+        "El. redőnyök"
+      ],
+      "materials": [
+        "2 perc a tengertől",
+        "Privát medence (opció)",
+        "Légkondicionálás",
+        "Egzotikus parketta",
+        "El. redőnyök"
+      ]
+    },
+    "siloKrk": {
+      "title": "Šilo Krk Apartmanok",
+      "location": "Šilo, Krk szigete",
+      "shortDesc": "Apartmanok a Stipanja festői védett öblében Krk szigetén, homokos stranddal és kristálytiszta tengerrel.",
+      "fullDesc": "Šilo a legtöbb turisztikai hagyománnyal rendelkező legnagyobb település Dobrinj községben, a védett Stipanja-öbölben Crikvenica közelében. Minőségi apartmanok, csupán 5 perces sétára a stranttól.",
+      "features": [
+        "5 perc a tengertől",
+        "Privát medence (opció)",
+        "Légkondicionálás",
+        "Olasz kerámia",
+        "PVC ablakok"
+      ],
+      "materials": [
+        "5 perc a tengertől",
+        "Privát medence (opció)",
+        "Légkondicionálás",
+        "Olasz kerámia",
+        "PVC ablakok"
+      ]
+    },
+    "bukovacZagreb": {
+      "title": "Bukovac Zágráb",
+      "location": "Gornji Bukovac, Zágráb",
+      "shortDesc": "Exkluzív lakások rezidenciában a Gornji Bukovacon Zágrábi panorámával és privát garázzsal.",
+      "fullDesc": "Lakások exkluzív rezidenciában a Gornji Bukovacon, a legmagasabb színvonalú kivitelben: kártyás zár, riasztó, videókapu, el. redőnyök, jacuzzi, szauna, padlófűtés, természetes kőfalak és designer radiátorok. Privát garázs és 2 parkolóhely.",
+      "features": [
+        "Privát garázs",
+        "Jacuzzi & szauna",
+        "Kamerarendszer",
+        "Zágrábi panoráma",
+        "Központi porszívó"
+      ],
+      "materials": [
+        "Privát garázs",
+        "Jacuzzi & szauna",
+        "Kamerarendszer",
+        "Zágrábi panoráma",
+        "Központi porszívó"
+      ]
+    },
+    "dramaljApartmani": {
+      "title": "Dramalj Apartmanok",
+      "location": "Dramalj, Crikvenica",
+      "shortDesc": "Exkluzív apartmanok csendes helyen Dramaljban, gyönyörű tengeri kilátással.",
+      "fullDesc": "Dramalj Crikvenica közelében fekvő turisztikai hely. Exkluzív apartmanok csendes elhelyezkedésben tengeri kilátással, minőségi anyagokból, minden szobában légkondicionálással és olasz szaniterrel.",
+      "features": [
+        "Tengeri kilátás",
+        "Klimatizált szobák",
+        "Olasz kerámia",
+        "INOX korlátok",
+        "Központi porszívó"
+      ],
+      "materials": [
+        "Tengeri kilátás",
+        "Klimatizált szobák",
+        "Olasz kerámia",
+        "INOX korlátok",
+        "Központi porszívó"
+      ]
+    },
+    "perjavicaZagreb": {
+      "title": "Perjavica Zágráb",
+      "location": "Perjavica, Zágráb",
+      "shortDesc": "Városi villa Zágráb vonzó domboldali helyszínén, háromoldalas panorámával a városra.",
+      "fullDesc": "A Perjavicán, Zágráb egyik újonnan felfedezett, rendkívül vonzó domboldali helyszínén modern városi villát építettünk. Minden lakáshoz saját garázs tartozik, az épületben mini Fitness-Wellness terület is van jacuzzival és szaunával.",
+      "features": [
+        "Privát garázs",
+        "Fitness-Wellness",
+        "Jacuzzi & szauna",
+        "Zágrábi panoráma",
+        "Daikin klíma"
+      ],
+      "materials": [
+        "Privát garázs",
+        "Fitness-Wellness",
+        "Jacuzzi & szauna",
+        "Zágrábi panoráma",
+        "Daikin klíma"
+      ]
+    },
+    "qubo3": {
+      "title": "Qubo 3 Malinska",
+      "location": "Malinska, Krk szigete",
+      "shortDesc": "Három luxusan berendezett apartman végtelen medencékkel Malinska csendes, zöld környezetében.",
+      "fullDesc": "A Qubo 3 luxusapartmanok Krk szigetén, Malinskan találhatók, csendes, zöld környezetben, a tenger közelében. A komplexum az 1. apart. (156 m²) privát kerttel és medencével, a 2. apart. (78 m²) penthouse-zal és a 3. apart. (113 m²) kerttel és medencével áll. Végtelen medencék LED-es multicolor megvilágítással, panoráma tolófalak, A+ inverteres klíma.",
+      "features": [
+        "Végtelen medence LED",
+        "A+ inverteres klíma",
+        "Panoráma tolófalak",
+        "Gondozott kert",
+        "Kamerarendszer"
+      ],
+      "materials": [
+        "Végtelen medence LED",
+        "A+ inverteres klíma",
+        "Panoráma tolófalak",
+        "Gondozott kert",
+        "Kamerarendszer"
+      ]
+    },
+    "santoriniCrikvenica": {
+      "title": "Santorini Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Modern luxusapartmanok Crikvenicában – földszinti saját kerttel és medencével, emeleti közös medencével.",
+      "fullDesc": "Crikvenica a Kvarner-öbölben fekszik, Rijekától 33 km-re, több mint százéves turisztikai hagyományokkal. Luxusan berendezett apartmanok egzotikus parkettával, márvány lépcsőházzal, olasz szaniterrel és légkondicionálással.",
+      "features": [
+        "Medence apartmanonként",
+        "Egzotikus parketta",
+        "Márvány lépcsőház",
+        "Légkondicionálás",
+        "PVC ablakok"
+      ],
+      "materials": [
+        "Medence apartmanonként",
+        "Egzotikus parketta",
+        "Márvány lépcsőház",
+        "Légkondicionálás",
+        "PVC ablakok"
+      ]
+    },
+    "santoriniNjivice": {
+      "title": "Santorini Njivice",
+      "location": "Njivice, Krk szigete",
+      "shortDesc": "Luxus modern villa négy lakóegységgel, mindegyik saját medencével, 400 m-re a tengertől Krk szigetén.",
+      "fullDesc": "Luxus modern villa tengeri kilátással az északi Adrián, Krk szigetén. Négy egység – földszinti saját kerttel és medencével, emeleti tetőterasszal és medencével. Távolság a tengertől: 400 m.",
+      "features": [
+        "Saját medence egységenként",
+        "Tetőterasz",
+        "Egzotikus parketta",
+        "Márvány lépcsőház",
+        "400 m a tengertől"
+      ],
+      "materials": [
+        "Saját medence egységenként",
+        "Tetőterasz",
+        "Egzotikus parketta",
+        "Márvány lépcsőház",
+        "400 m a tengertől"
+      ]
+    },
+    "selceApartmani": {
+      "title": "Selce Apartmanok",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Luxusan berendezett apartmanok Selce festői öblében, Rijekától 35 km-re délre, gyönyörű tengeri kilátással.",
+      "fullDesc": "Selce Crikvenica közelében, Rijekától 35 km-re délre festői öbölben fekvő helység. Egzotikus parketta, Daikin klíma, olasz szaniter és central porszívó. A komplexumban garázs és tárolók is találhatók.",
+      "features": [
+        "Tengeri kilátás",
+        "Garázs & tároló",
+        "Egzotikus parketta",
+        "Daikin klíma",
+        "Központi porszívó"
+      ],
+      "materials": [
+        "Tengeri kilátás",
+        "Garázs & tároló",
+        "Egzotikus parketta",
+        "Daikin klíma",
+        "Központi porszívó"
+      ]
+    },
+    "villaAzzuroCrikvenica": {
+      "title": "Villa Azzuro Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Brač kővel burkolt ultra-modern villákból álló komplexum az első sorban a tengernél, 9 luxuslakással, 120–160 m².",
+      "fullDesc": "Kilenc ultra-modern luxuslakás (120–160 m²) közvetlenül a tenger mellett, az első sorban, gyönyörű strandok közelében. Minden villában három lakás és mélygarázs közvetlen lifttel. Brač kőburkolattal, egyes lakásoknál saját kert és medence.",
+      "features": [
+        "Első sor a tengernél",
+        "Brač kőburkolat",
+        "Mélygarázs lifttel",
+        "Medence (opció)",
+        "Prémium anyagok"
+      ],
+      "materials": [
+        "Első sor a tengernél",
+        "Brač kőburkolat",
+        "Mélygarázs lifttel",
+        "Medence (opció)",
+        "Prémium anyagok"
+      ]
+    },
+    "villaVerdeCrikvenica": {
+      "title": "Villa Verde Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Ultra-modern, Brač kővel burkolt villák az első sorban a tengernél, mélygarázzsal és közvetlen lifttel.",
+      "fullDesc": "Kilenc ultra-modern luxuslakás (120–160 m²) közvetlenül a tenger mellett, az első sorban. Minden villában három lakás és mélygarázs közvetlen lifttel. Brač kőburkolattal, egyes lakásoknál kert és medence.",
+      "features": [
+        "Első sor a tengernél",
+        "Brač kőburkolat",
+        "Mélygarázs lifttel",
+        "Medence (opció)",
+        "Exkluzív design"
+      ],
+      "materials": [
+        "Első sor a tengernél",
+        "Brač kőburkolat",
+        "Mélygarázs lifttel",
+        "Medence (opció)",
+        "Exkluzív design"
+      ]
+    },
+    "villaZorcici": {
+      "title": "Villa Zorčići",
+      "location": "Zorčići",
+      "shortDesc": "Luxus családi ház medencével a mesés Zorčići faluban.",
+      "fullDesc": "Luxus családi ház medencével a festői Zorčići faluban, dús természettel körülvéve, csendben és magányban.",
+      "features": [
+        "Privát medence",
+        "Családi villa",
+        "Csend & magány",
+        "Dús természet"
+      ],
+      "materials": [
+        "Privát medence",
+        "Családi villa",
+        "Csend & magány",
+        "Dús természet"
+      ]
+    },
+    "saintMartinKostelj": {
+      "title": "Villas Saint Martin",
+      "location": "Kostelj, Crikvenica",
+      "shortDesc": "Négy luxus családi villa Crikvenica szép hátterében, 5 km-re a tengertől, medencével, szaunával és olasz bútorokkal.",
+      "fullDesc": "Négy luxus családi villa Crikvenica hátterében, 5 km-re a tengertől és a Tribalj-tó közelében. Minden villa 200 m² lakóterülettel és 650 m² kerttel, három gardrób szobás hálószobával, két fürdőszobával, kültéri medencével, belső és külső jakuzzival, szaunával, nyári konyhával és kandallóval rendelkezik. Teljesen berendezve olasz designer bútorokkal.",
+      "features": [
+        "Kültéri medence",
+        "Szauna & jacuzzi",
+        "Nyári konyha & kandalló",
+        "Tenger & tó panoráma",
+        "Olasz bútorok"
+      ],
+      "materials": [
+        "Kültéri medence",
+        "Szauna & jacuzzi",
+        "Nyári konyha & kandalló",
+        "Tenger & tó panoráma",
+        "Olasz bútorok"
+      ]
+    },
+    "pavus": {
+      "title": "Villa Malinska Pavus",
+      "location": "Malinska, Krk sziget",
+      "shortDesc": "Elegáns villa mediterrán építészeti stílusból merítve.",
+      "fullDesc": "Elegáns villa mediterrán építészeti stílusból merítve, prémium anyagok és berendezések felhasználásával a hosszú távú minőség és kényelem érdekében.",
+      "features": [
+        "Medence",
+        "Mediterrán stílus",
+        "Terasz",
+        "Légkondicionáló"
+      ],
+      "materials": [
+        "Medence",
+        "Mediterrán stílus",
+        "Terasz",
+        "Légkondicionáló"
+      ]
+    }
+  },
+  "properties": {
+    "label": "Ajánlataink",
+    "heading": "Projektek & Ingatlanok",
+    "description": "Fedezze fel projektjeinket az Észak-Adrián és Zágrábban. Minden épület tükrözi megalkuvást nem ismerő minőségi építési és tervezési szabványainkat.",
+    "availableHeading": "Elérhető ingatlanok",
+    "soldHeading": "Megvalósult projektek"
+  },
+  "about": {
+    "label": "Rólunk",
+    "heading": "Projekt MT d.o.o.",
+    "description": "Elismert és stabil építőipari vállalat kiváló referenciákkal, amelyet 2001-ben alapítottak Zágrábban.",
+    "storyLabel": "Történetünk",
+    "storyHeading": "Több mint 20 év kiválóság az építőiparban",
+    "storyP1": "A PROJEKT MT d.o.o. Zágráb céget 2001-ben alapította Mario Tadić, aki elkötelezett munkájával elismert és stabil, kiváló referenciákkal rendelkező céggé alakította.",
+    "storyP2": "A cég elsősorban lakások és lakóegységek építésével foglalkozik, számos ingatlannal az Észak-Adrián és Zágrábban. Ultramodern, legmagasabb minőségű épületeink az Észak-Adriai tengerpart vonzó helyszínein találhatók.",
+    "storyP3": "Csúcsminőségű építőkként a PROJEKT MT d.o.o. luxusvillák építéséről ismert. Progresszív megközelítést követünk, egyedülálló kézműves stratégiával és az építési szabványok betartásában való precizitással.",
+    "storyP4": "A projekt méretétől függetlenül a cég páratlan elkötelezettsége és az építési folyamathoz való gyakorlati hozzáállása minden projektet kiemelkedővé tesz.",
+    "valuesLabel": "Értékeink",
+    "valuesHeading": "Mi tesz minket különlegessé",
+    "value1Title": "Anyagminőség",
+    "value1Desc": "Kizárólag prémium anyagokat és berendezéseket használunk, amelyek hosszú távú minőséget, kényelmet és esztétikai vonzerőt garantálnak.",
+    "value2Title": "Kivitelezési precizitás",
+    "value2Desc": "Minden részlet gondosan megtervezett és kivitelezett. Az időben történő teljesítés és a határidők betartása az ügyfelek felé vállalt kötelezettségünk.",
+    "value3Title": "Luxus dizájn",
+    "value3Desc": "Építészeink és belsőépítészeink csapata modern stílusú épületeket hoz létre, amelyek tökéletesen illeszkednek a környezetükbe.",
+    "value4Title": "Megbízhatóság",
+    "value4Desc": "Az alapítása óta exponenciális növekedést mutató cég az ügyfelek bizalmának és az elégedett ingatlan-tulajdonosok hálózatának köszönheti sikerét.",
+    "teamLabel": "Csapatunk",
+    "teamHeading": "Szakértelem minden projekt mögött",
+    "team1Name": "Mario Tadić",
+    "team1Role": "Alapító & ügyvezető igazgató",
+    "team1Desc": "A cég alapítója, aki 2001 óta felépített egy elismert és stabil, minőségéről ismert építőipari vállalatot.",
+    "team2Name": "Tervezői csapat",
+    "team2Role": "Építészet & dizájn",
+    "team2Desc": "Tapasztalt építészek, akik kortárs épületeket hoznak létre a helyi hagyományok és a természeti környezet tiszteletben tartásával.",
+    "team3Name": "Kivitelezői csapat",
+    "team3Role": "Építés & felügyelet",
+    "team3Desc": "Szakképzett kivitelezők csapata, amely minden projektet a legmagasabb iparági szabványok szerint valósít meg."
+  },
+  "contact": {
+    "label": "Kapcsolat",
+    "heading": "Vegye fel velünk a kapcsolatot",
+    "description": "Kérdései vannak projektjeinkkel kapcsolatban, vagy megtekintést szeretne szervezni? Keressen minket – szívesen segítünk.",
+    "infoTitle": "Információk",
+    "addressLabel": "Cím",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-mail",
+    "hoursLabel": "Nyitvatartási idő",
+    "hoursLine1": "H – P: 09:00 – 17:00",
+    "hoursLine2": "Szo: 09:00 – 13:00",
+    "formTitle": "Küldjön érdeklődést",
+    "nameLabel": "Teljes név",
+    "namePlaceholder": "Az Ön neve",
+    "emailFieldLabel": "E-mail cím",
+    "emailPlaceholder": "az.on@email.hu",
+    "phoneFieldLabel": "Telefonszám",
+    "phonePlaceholder": "+385 ...",
+    "subjectLabel": "Tárgy",
+    "subjectDefault": "Válasszon projektet...",
+    "subjectOther": "Egyéb",
+    "messageLabel": "Üzenet",
+    "messagePlaceholder": "Az Ön üzenete vagy érdeklődése...",
+    "submitBtn": "Üzenet küldése",
+    "successTitle": "Az üzenet sikeresen elküldve!",
+    "successText": "Köszönjük érdeklődését. Mielőbb felvesszük Önnel a kapcsolatot.",
+    "successBtn": "Új üzenet küldése",
+    "errorRequired": "Kérjük, töltse ki az összes kötelező mezőt.",
+    "errorEmail": "Kérjük, adjon meg érvényes e-mail címet."
+  },
+  "projectPage": {
+    "overview": "Projekt áttekintése",
+    "gallery": "Galéria",
+    "otherProjects": "Más projektek",
+    "loading": "Képek betöltése...",
+    "materials": "Anyagok es felszereltseg"
+  },
+  "notFound": {
+    "heading": "Az oldal nem található",
+    "description": "A keresett oldal nem létezik vagy áthelyezték. Ellenőrizze az URL-t, vagy térjen vissza a főoldalra.",
+    "homeCta": "Vissza a főoldalra",
+    "propertiesCta": "Ajánlatok megtekintése"
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "common": {
+    "available": "Na voljo",
+    "sold": "Prodano",
+    "learnMore": "Več informacij →",
+    "seeAll": "Vsa ponudba →",
+    "founded": "Ustanovitev",
+    "copyright": "Projekt MT d.o.o. – Vse pravice pridržane."
+  },
+  "nav": {
+    "home": "Domov",
+    "properties": "Ponudba",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "cta": "Stopite v stik"
+  },
+  "footer": {
+    "tagline": "Gradnja in prodaja luksuznih stanovanj in apartmajev ob severnem Jadranu in v Zagrebu.",
+    "navCol": "Navigacija",
+    "projectsCol": "Projekti"
+  },
+  "home": {
+    "heroLabel": "Gradnja & Prodaja Nepremičnin",
+    "heroTitle1": "Luksuzno življenje",
+    "heroTitle2": "ob Jadranski obali",
+    "heroSubtitle": "Projekt MT – vrhunski graditelji stanovanj in apartmajev ob severnem Jadranu in v Zagrebu od leta 2001.",
+    "heroCta1": "Oglejte si ponudbo",
+    "heroCta2": "O nas",
+    "stat1": "Let izkušenj",
+    "stat2": "Dokončanih projektov",
+    "stat3": "Zadovoljnih družin",
+    "stat4": "Regije v fokusu",
+    "aboutLabel": "Kdo smo",
+    "aboutHeading": "Ugledna podjetja z odličnimi referencami",
+    "aboutP1": "Podjetje PROJEKT MT d.o.o. Zagreb je leta 2001 ustanovil Mario Tadić, ki ga je s svojim delom preobrazil v ugledno in stabilno podjetje z odličnimi referencami.",
+    "aboutP2": "Podjetje se primarno ukvarja z gradnjo stanovanj in apartmajev ter šteje številne objekte ob severnem Jadranu in v mestu Zagreb. Kot vrhunski graditelji smo znani po gradnji luksuznih vil s progresivnim pristopom in natančnostjo.",
+    "aboutCta": "Izvedi več",
+    "projectsLabel": "Naši projekti",
+    "projectsHeading": "Izbrani projekti",
+    "ctaLabel": "Vaš novi dom",
+    "ctaHeading": "Vas zanima nepremičnina?",
+    "ctaText": "Stopite v stik z nami za več informacij o razpoložljivih projektih ali dogovorite si ogled.",
+    "ctaBtn": "Stopite v stik"
+  },
+  "projects": {
+    "villaAzzuro": {
+      "title": "Villa Azzuro Malinska",
+      "location": "Malinska, otok Krk",
+      "shortDesc": "Luksuzna vila s pogledom na morje v mirnem delu Malinske.",
+      "fullDesc": "Luksuzna vila, ki se nahaja na eni od privlačnih lokacij ob čudoviti obali severnega Jadrana. Ultramoderni objekt vrhunske izvedbe in kakovosti.",
+      "features": [
+        "Blizu morja",
+        "Luksuzno opremljeno",
+        "Parkirišče",
+        "Terasa"
+      ],
+      "materials": [
+        "Blizu morja",
+        "Luksuzno opremljeno",
+        "Parkirišče",
+        "Terasa"
+      ]
+    },
+    "sesvete": {
+      "title": "Projekt Sesvete",
+      "location": "Sesvete, Zagreb",
+      "shortDesc": "Moderni stanovanjski kompleks v Sesvetah z izjemnimi razgledi.",
+      "fullDesc": "Moderni stanovanjski kompleks v Sesvetah, delu Zagreba z nenehnim razvojem. Odlična infrastruktura in povezanost s centrom Zagreba.",
+      "features": [
+        "Blizu centra",
+        "Sodoben dizajn",
+        "Garaža",
+        "Zelene površine"
+      ],
+      "materials": [
+        "Blizu centra",
+        "Sodoben dizajn",
+        "Garaža",
+        "Zelene površine"
+      ]
+    },
+    "villeKrkA": {
+      "title": "Ville KRK – Objekt A",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Ekskluzivni stanovanjski objekti na otoku Krku v bližini morja.",
+      "fullDesc": "Ekskluzivni stanovanjski objekt na otoku Krku v neposredni bližini morja. Vrhunski materiali in sodobna arhitektura v skladu z naravo.",
+      "features": [
+        "Pogled na morje",
+        "Zasebni bazen",
+        "Vrhunski materiali",
+        "Pametna hiša"
+      ],
+      "materials": [
+        "Pogled na morje",
+        "Zasebni bazen",
+        "Vrhunski materiali",
+        "Pametna hiša"
+      ]
+    },
+    "villeKrkB": {
+      "title": "Ville KRK – Objekt B",
+      "location": "Krk, Kvarner",
+      "shortDesc": "Drugi stanovanjski objekt v okviru projekta Ville KRK.",
+      "fullDesc": "Drugi stanovanjski objekt v okviru projekta Ville KRK. Enaki visoki gradbeni standardi z nekoliko drugačnimi tlorisnimi rešitvami.",
+      "features": [
+        "Pogled na morje",
+        "Zasebni bazen",
+        "Vrt",
+        "Klimatska naprava"
+      ],
+      "materials": [
+        "Pogled na morje",
+        "Zasebni bazen",
+        "Vrt",
+        "Klimatska naprava"
+      ]
+    },
+    "qubo4": {
+      "title": "Villa Malinska QUBO4",
+      "location": "Malinska, otok Krk",
+      "shortDesc": "Moderno zasnovana vila s kvadratnimi arhitekturnimi motivi v srcu Malinske.",
+      "fullDesc": "Moderno zasnovana vila s kvadratnimi arhitekturnimi motivi v srcu Malinske. Privlačen dizajn, ki se popolnoma vklopi v mediteransko okolje.",
+      "features": [
+        "Sodoben dizajn",
+        "Blizu plaže",
+        "Terasa",
+        "Žar zona"
+      ],
+      "materials": [
+        "Sodoben dizajn",
+        "Blizu plaže",
+        "Terasa",
+        "Žar zona"
+      ]
+    },
+    "malinska2": {
+      "title": "Villa Malinska 2",
+      "location": "Malinska, otok Krk",
+      "shortDesc": "Drugi projekt v Malinski, sinonim za kakovostno gradnjo.",
+      "fullDesc": "Drugi projekt v Malinski, ki je postal sinonim za kakovostno gradnjo in pozornost do podrobnosti v luksuznem segmentu.",
+      "features": [
+        "Bazen",
+        "Blizu morja",
+        "Terasa",
+        "Parkirišče"
+      ],
+      "materials": [
+        "Bazen",
+        "Blizu morja",
+        "Terasa",
+        "Parkirišče"
+      ]
+    },
+    "malinska1": {
+      "title": "Villa Malinska 1",
+      "location": "Malinska, otok Krk",
+      "shortDesc": "Pionirski projekt Projekt MT na otoku Krku.",
+      "fullDesc": "Pionirski projekt Projekt MT na otoku Krku, ki je postavil temelje za vse prihodnje projekte podjetja na jadranski obali.",
+      "features": [
+        "Blizu morja",
+        "Urejeni vrt",
+        "Garaža",
+        "Terasa s pogledom"
+      ],
+      "materials": [
+        "Blizu morja",
+        "Urejeni vrt",
+        "Garaža",
+        "Terasa s pogledom"
+      ]
+    },
+    "selce2": {
+      "title": "Apartmaji Selce 2",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Luksuzni apartmaji v slikovitem turističnem kraju Selce, 3 km jugovzhodno od Crikvenice, z možnostjo lastnega bazena.",
+      "fullDesc": "Selce je majhen turistični kraj v Kvarnerskem zalivu, 3 km jugovzhodno od Crikvenice, znan po peščeni plaži in stoletni turistični tradiciji. Apartmaji so grajeni iz vrhunskih materialov z vrsto modernih detajlov.",
+      "features": [
+        "2 min. do morja",
+        "Zasebni bazen opcija",
+        "Klimatska naprava",
+        "Eksotični parket",
+        "El. rolete"
+      ],
+      "materials": [
+        "2 min. do morja",
+        "Zasebni bazen opcija",
+        "Klimatska naprava",
+        "Eksotični parket",
+        "El. rolete"
+      ]
+    },
+    "siloKrk": {
+      "title": "Apartmaji Šilo Krk",
+      "location": "Šilo, otok Krk",
+      "shortDesc": "Apartmaji v slikovitem zaščitenem zalivu Stipanja na otoku Krk s peščeno plažo in čistim morjem.",
+      "fullDesc": "Šilo je največje naselje z najdaljšo turistično tradicijo v občini Dobrinj, slikovito bišče v zaščitenem zalivu Stipanja blizu Crikvenice. Kakovostni apartmaji, le 5 minut hoje od plaže.",
+      "features": [
+        "5 min. do morja",
+        "Zasebni bazen opcija",
+        "Klimatska naprava",
+        "Italijanska keramika",
+        "PVC okna"
+      ],
+      "materials": [
+        "5 min. do morja",
+        "Zasebni bazen opcija",
+        "Klimatska naprava",
+        "Italijanska keramika",
+        "PVC okna"
+      ]
+    },
+    "bukovacZagreb": {
+      "title": "Bukovac Zagreb",
+      "location": "Gornji Bukovac, Zagreb",
+      "shortDesc": "Ekskluzivna stanovanja v rezidenčni vili na Gornjem Bukovcu s pogledom na Zagreb in zasebno garažo.",
+      "fullDesc": "Stanovanja v ekskluzivni rezidenčni vili na Gornjem Bukovcu v najvišjem standardu: ključavnica na kartico, alarm, videotelefon, el. rolete, jacuzzi, savna, talno ogrevanje, naravni kamen in oblikovalni radiatorji. Zasebna garaža in 2 parkirni mesti.",
+      "features": [
+        "Zasebna garaža",
+        "Jacuzzi & savna",
+        "Video nadzor",
+        "Pogled na Zagreb",
+        "Centralni sesalec"
+      ],
+      "materials": [
+        "Zasebna garaža",
+        "Jacuzzi & savna",
+        "Video nadzor",
+        "Pogled na Zagreb",
+        "Centralni sesalec"
+      ]
+    },
+    "dramaljApartmani": {
+      "title": "Apartmaji Dramalj",
+      "location": "Dramalj, Crikvenica",
+      "shortDesc": "Ekskluzivni apartmaji na mirni lokaciji v Dramlju z veličastnim pogledom na morje.",
+      "fullDesc": "Dramalj je turistični kraj v bližini Crikvenice. Ekskluzivni apartmaji na mirni lokaciji s pogledom na morje, grajeni iz kakovostnih materialov z klimatizacijo v vsakem prostoru.",
+      "features": [
+        "Pogled na morje",
+        "Klimatizirani prostori",
+        "Italijanska keramika",
+        "INOX ograje",
+        "Centralni sesalec"
+      ],
+      "materials": [
+        "Pogled na morje",
+        "Klimatizirani prostori",
+        "Italijanska keramika",
+        "INOX ograje",
+        "Centralni sesalec"
+      ]
+    },
+    "perjavicaZagreb": {
+      "title": "Perjavica Zagreb",
+      "location": "Perjavica, Zagreb",
+      "shortDesc": "Urbana vila na atraktivni podsljemenski lokaciji Zagreba s panoramskim pogledom na mesto z vseh treh strani.",
+      "fullDesc": "Na Perjavici, novoodkriti, izjemno privlačni lokaciji pod pobočjem Zagreba, smo zgradili urbano vilo. Vsako stanovanje ima lastno garažo, stavba pa vključuje mini Fitness-Wellness prostor z jacuzzijem in savno.",
+      "features": [
+        "Zasebna garaža",
+        "Fitness-Wellness",
+        "Jacuzzi & savna",
+        "Pogled na Zagreb",
+        "Klima Daikin"
+      ],
+      "materials": [
+        "Zasebna garaža",
+        "Fitness-Wellness",
+        "Jacuzzi & savna",
+        "Pogled na Zagreb",
+        "Klima Daikin"
+      ]
+    },
+    "qubo3": {
+      "title": "Qubo 3 Malinska",
+      "location": "Malinska, otok Krk",
+      "shortDesc": "Tri luksuzno opremljeni apartmaji s prelivalnimi bazeni v mirnem zelenem okolju Malinske.",
+      "fullDesc": "Luksuzni apartmaji Qubo 3 se nahajajo na otoku Krku v Malinski v mirnem zelenem okolju blizu morja. Kompleks sestavljajo apart. 1 (156 m²) z zasebnim dvoriščem in bazenom, apart. 2 (78 m²) penthouse in apart. 3 (113 m²) z dvoriščem in bazenom. Prelivni bazeni z LED multicolor osvetlitvijo, panoramske drsne stene in klima razreda A+.",
+      "features": [
+        "Prelivni bazen LED",
+        "Klima A+",
+        "Panoramske drsne stene",
+        "Hortikulturno urejen okoliš",
+        "Video nadzor"
+      ],
+      "materials": [
+        "Prelivni bazen LED",
+        "Klima A+",
+        "Panoramske drsne stene",
+        "Hortikulturno urejen okoliš",
+        "Video nadzor"
+      ]
+    },
+    "santoriniCrikvenica": {
+      "title": "Santorini Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Moderni luksuzni apartmaji v Crikvenici – pritličje z zasebnim vrtom in bazenom, nadstropje s skupnim bazenom.",
+      "fullDesc": "Crikvenica leži v Kvarnerskem zalivu, 33 km od Reke, s turističnim izročilom daljšim od enega stoletja. Luksuzno opremljeni apartmaji z eksotičnim parketom, marmornatim stopniščem, italijanskimi sanitarijami in klimatizacijo.",
+      "features": [
+        "Bazen za vsak ap.",
+        "Eksotičen parket",
+        "Marmornato stopnišče",
+        "Klimatska naprava",
+        "PVC okna"
+      ],
+      "materials": [
+        "Bazen za vsak ap.",
+        "Eksotičen parket",
+        "Marmornato stopnišče",
+        "Klimatska naprava",
+        "PVC okna"
+      ]
+    },
+    "santoriniNjivice": {
+      "title": "Santorini Njivice",
+      "location": "Njivice, otok Krk",
+      "shortDesc": "Luksuzna moderna vila s štirimi stanovanjskimi enotami, vsaka z lastnim bazenom, 400 m od morja na otoku Krk.",
+      "fullDesc": "Luksuzna moderna vila s pogledom na morje na severni jadranski obali na otoku Krku. Štiri enote – pritličje z lastnim dvoriščem in bazenom, nadstropje s strešno teraso in bazenom. Razdalja do morja: 400 m.",
+      "features": [
+        "Zasebni bazen na enoto",
+        "Strešna terasa",
+        "Eksotičen parket",
+        "Marmornato stopnišče",
+        "400 m do morja"
+      ],
+      "materials": [
+        "Zasebni bazen na enoto",
+        "Strešna terasa",
+        "Eksotičen parket",
+        "Marmornato stopnišče",
+        "400 m do morja"
+      ]
+    },
+    "selceApartmani": {
+      "title": "Apartmaji Selce",
+      "location": "Selce, Crikvenica",
+      "shortDesc": "Luksuzno opremljeni apartmaji v slikovitem zalivu Selce, 35 km južno od Reke, z lepim pogledom na morje.",
+      "fullDesc": "Selce leži v slikovitem zalivu v bližini Crikvenice, 35 km južno od Reke. Eksotičen parket, klimatizacija Daikin, italijanske sanitarije in centralni sesalci. Kompleks vključuje garaže in shrambe.",
+      "features": [
+        "Pogled na morje",
+        "Garaža & shramba",
+        "Eksotičen parket",
+        "Klima Daikin",
+        "Centralni sesalec"
+      ],
+      "materials": [
+        "Pogled na morje",
+        "Garaža & shramba",
+        "Eksotičen parket",
+        "Klima Daikin",
+        "Centralni sesalec"
+      ]
+    },
+    "villaAzzuroCrikvenica": {
+      "title": "Villa Azzuro Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Kompleks izjemno modernih vil obloženih z Brač kamnom v prvi vrsti ob morju, 9 luksuznih stanovanj 120–160 m².",
+      "fullDesc": "Devet ultra modernih luksuznih stanovanj (120–160 m²) neposredno ob morju v prvi vrsti. Vsaka vila ima tri stanovanja in podzemno garažo z neposrednim dvigalom. Obložene z Brač kamnom; izbrana stanovanja imajo zasebno dvorišče in bazen.",
+      "features": [
+        "1. vrsta ob morju",
+        "Brač kamen",
+        "Podzemna garaža dvigalo",
+        "Bazen opcija",
+        "Vrhunski materiali"
+      ],
+      "materials": [
+        "1. vrsta ob morju",
+        "Brač kamen",
+        "Podzemna garaža dvigalo",
+        "Bazen opcija",
+        "Vrhunski materiali"
+      ]
+    },
+    "villaVerdeCrikvenica": {
+      "title": "Villa Verde Crikvenica",
+      "location": "Crikvenica, Kvarner",
+      "shortDesc": "Ultra moderne vile obložene z Brač kamnom v prvi vrsti ob morju s podzemno garažo in neposrednim dvigalom.",
+      "fullDesc": "Devet ultra modernih luksuznih stanovanj (120–160 m²) neposredno ob morju v prvi vrsti. Vsaka vila ima tri stanovanja in podzemno garažo z neposrednim dvigalom. Obložene z Brač kamnom; izbrana stanovanja z vrtom in bazenom.",
+      "features": [
+        "1. vrsta ob morju",
+        "Brač kamen",
+        "Podzemna garaža dvigalo",
+        "Bazen opcija",
+        "Ekskluzivni dizajn"
+      ],
+      "materials": [
+        "1. vrsta ob morju",
+        "Brač kamen",
+        "Podzemna garaža dvigalo",
+        "Bazen opcija",
+        "Ekskluzivni dizajn"
+      ]
+    },
+    "villaZorcici": {
+      "title": "Villa Zorčići",
+      "location": "Zorčići",
+      "shortDesc": "Luksuzna družinska hiša z bazenom v idiličnem vaškem okolju Zorčić.",
+      "fullDesc": "Luksuzna družinska hiša z bazenom v idiličnen vaškem okolju Zorčić, obdana z bujno naravo s tišino in zasebnostjo.",
+      "features": [
+        "Zasebni bazen",
+        "Družinska vila",
+        "Mir & zasebnost",
+        "Bujno zelenje"
+      ],
+      "materials": [
+        "Zasebni bazen",
+        "Družinska vila",
+        "Mir & zasebnost",
+        "Bujno zelenje"
+      ]
+    },
+    "saintMartinKostelj": {
+      "title": "Villas Saint Martin",
+      "location": "Kostelj, Crikvenica",
+      "shortDesc": "Štiri luksuzne družinske vile v predivnem zaledju Crikvenice, 5 km od morja, z bazenom, savno in italijanskim pohištvom.",
+      "fullDesc": "Štiri luksuzne družinske vile v zaledju Crikvenice, 5 km od morja in blizu jezera Tribalj. Vsaka vila obsega 200 m² z 650 m² vrta, tri spalnice z garderobo, dve kopalnici, zunanji bazen, notranji in zunanji jacuzzi, savno, letno kuhinjo in kamin. Celostno opremljene z italijanskim oblikovalskim pohištvom.",
+      "features": [
+        "Zunanji bazen",
+        "Savna & jacuzzi",
+        "Letna kuhinja & kamin",
+        "Pogled na morje & jezero",
+        "Ital. pohištvo"
+      ],
+      "materials": [
+        "Zunanji bazen",
+        "Savna & jacuzzi",
+        "Letna kuhinja & kamin",
+        "Pogled na morje & jezero",
+        "Ital. pohištvo"
+      ]
+    },
+    "pavus": {
+      "title": "Villa Malinska Pavus",
+      "location": "Malinska, otok Krk",
+      "shortDesc": "Elegantna vila, navdihnjena z mediteranskim arhitekturnim slogom.",
+      "fullDesc": "Elegantna vila, navdihnjena z mediteranskim arhitekturnim slogom, z uporabo vrhunskih materialov in opreme za dolgoročno kakovost in udobje.",
+      "features": [
+        "Bazen",
+        "Mediteranski slog",
+        "Terasa",
+        "Klimatska naprava"
+      ],
+      "materials": [
+        "Bazen",
+        "Mediteranski slog",
+        "Terasa",
+        "Klimatska naprava"
+      ]
+    }
+  },
+  "properties": {
+    "label": "Naša Ponudba",
+    "heading": "Projekti & Nepremičnine",
+    "description": "Preglejte naše projekte ob severnem Jadranu in v Zagrebu. Vsak objekt odraža naše brezkompromisne standarde na področju gradnje in dizajna.",
+    "availableHeading": "Razpoložljive nepremičnine",
+    "soldHeading": "Realizirani projekti"
+  },
+  "about": {
+    "label": "O nas",
+    "heading": "Projekt MT d.o.o.",
+    "description": "Ugledno in stabilno gradbeno podjetje z odličnimi referencami, ustanovljeno v Zagrebu leta 2001.",
+    "storyLabel": "Naša zgodba",
+    "storyHeading": "Več kot 20 let odličnosti v gradbeništvu",
+    "storyP1": "Podjetje PROJEKT MT d.o.o. Zagreb je leta 2001 ustanovil Mario Tadić, ki ga je s predanim delom preobrazil v ugledno in stabilno podjetje z odličnimi referencami.",
+    "storyP2": "Podjetje se primarno ukvarja z gradnjo stanovanj in apartmajev, s številnimi nepremičninami ob severnem Jadranu in v Zagrebu. Naši ultramoderni objekti vrhunske kakovosti se nahajajo na privlačnih lokacijah ob čudoviti obali.",
+    "storyP3": "Kot vrhunski graditelji je PROJEKT MT d.o.o. znan po gradnji luksuznih vil. Sledimo progresivnemu pristopu z edinstveno strategijo mojstrstva in natančnosti pri upoštevanju gradbenih standardov.",
+    "storyP4": "Ne glede na obseg projekta, neprimerljiva predanost podjetja in praktičen pristop k gradbenemu procesu zagotavljata, da se vsak projekt izstopa.",
+    "valuesLabel": "Naše vrednote",
+    "valuesHeading": "Kaj nas naredi posebne",
+    "value1Title": "Kakovost materialov",
+    "value1Desc": "Uporabljamo izključno vrhunske materiale in opremo, ki zagotavljajo dolgoročno kakovost, udobje in estetski čar.",
+    "value2Title": "Natančnost izvedbe",
+    "value2Desc": "Vsak detajl je skrbno načrtovan in izveden. Pravočasna dostava in upoštevanje rokov je naša obveza do strank.",
+    "value3Title": "Luksuzni dizajn",
+    "value3Desc": "Naša ekipa arhitektov in interiernih oblikovalcev ustvarja objekte v sodobnem arhitekturnem slogu, ki se popolnoma vklopijo v okolje.",
+    "value4Title": "Zanesljivost",
+    "value4Desc": "Podjetje z eksponentno rastjo od ustanovitve, zahvaljujoč zaupanju strank in mreži zadovoljnih lastnikov nepremičnin.",
+    "teamLabel": "Naša ekipa",
+    "teamHeading": "Strokovnost za vsakim projektom",
+    "team1Name": "Mario Tadić",
+    "team1Role": "Ustanovitelj & direktor",
+    "team1Desc": "Ustanovitelj podjetja, ki je od leta 2001 zgradil ugledno in stabilno gradbeno podjetje, znano po kakovosti.",
+    "team2Name": "Arhitekturna ekipa",
+    "team2Role": "Arhitektura & dizajn",
+    "team2Desc": "Izkušeni arhitekti, ki ustvarjajo sodobne objekte ob spoštovanju lokalnih tradicij in naravnega okolja.",
+    "team3Name": "Gradbena ekipa",
+    "team3Role": "Gradnja & nadzor",
+    "team3Desc": "Usposobljena ekipa gradbenih strokovnjakov, ki vsak projekt izvaja po najvišjih standardih stroke."
+  },
+  "contact": {
+    "label": "Kontakt",
+    "heading": "Stopite v stik z nami",
+    "description": "Imate vprašanja o naših projektih ali bi radi dogovorili ogled? Pišite nam – z veseljem vam bomo pomagali.",
+    "infoTitle": "Informacije",
+    "addressLabel": "Naslov",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-pošta",
+    "hoursLabel": "Delovni čas",
+    "hoursLine1": "Pon – Pet: 09:00 – 17:00",
+    "hoursLine2": "Sob: 09:00 – 13:00",
+    "formTitle": "Pošljite povpraševanje",
+    "nameLabel": "Ime in priimek",
+    "namePlaceholder": "Vaše ime",
+    "emailFieldLabel": "E-poštni naslov",
+    "emailPlaceholder": "vasa@email.si",
+    "phoneFieldLabel": "Telefonska številka",
+    "phonePlaceholder": "+385 ...",
+    "subjectLabel": "Zadeva",
+    "subjectDefault": "Izberite projekt...",
+    "subjectOther": "Drugo",
+    "messageLabel": "Sporočilo",
+    "messagePlaceholder": "Vaše sporočilo ali povpraševanje...",
+    "submitBtn": "Pošlji sporočilo",
+    "successTitle": "Sporočilo uspešno poslano!",
+    "successText": "Hvala za vaše povpraševanje. Odgovorili vam bomo v čim krajšem času.",
+    "successBtn": "Pošlji novo sporočilo",
+    "errorRequired": "Prosimo, izpolnite vsa obvezna polja.",
+    "errorEmail": "Prosimo, vnesite veljavni e-poštni naslov."
+  },
+  "projectPage": {
+    "overview": "Pregled projekta",
+    "gallery": "Galerija",
+    "otherProjects": "Drugi projekti",
+    "loading": "Nalaganje slik...",
+    "materials": "Materiali in oprema"
+  },
+  "notFound": {
+    "heading": "Stran ni najdena",
+    "description": "Stran, ki jo iščete, ne obstaja ali je bila premaknjena. Preverite URL ali se vrnite na začetno stran.",
+    "homeCta": "Začetna stran",
+    "propertiesCta": "Oglejte si ponudbo"
+  }
+}
