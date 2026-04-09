@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { useTranslation } from 'react-i18next';
 import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import { useSafeMode } from '../../utils/safeMode';
 import { subscribeToMediaQuery } from '../../utils/mediaQuery';
+import { lockBodyScroll } from '../../utils/scrollLock';
 
 export default function Navbar() {
   const { t } = useTranslation();
+  const location = useLocation();
   const safeMode = useSafeMode();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -25,6 +27,18 @@ export default function Navbar() {
       }
     });
   }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (safeMode || !menuOpen) {
+      return;
+    }
+
+    return lockBodyScroll();
+  }, [menuOpen, safeMode]);
 
   const closeMenu = () => setMenuOpen(false);
 

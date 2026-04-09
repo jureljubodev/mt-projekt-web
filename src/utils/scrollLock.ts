@@ -1,53 +1,47 @@
 let activeLocks = 0;
-let lockedScrollY = 0;
-
-let previousBodyStyles: {
+let previousStyles: {
+  htmlOverflow: string;
   overflow: string;
-  position: string;
-  top: string;
-  left: string;
-  right: string;
-  width: string;
+  paddingRight: string;
+  touchAction: string;
+  overscrollBehavior: string;
 } | null = null;
 
 export function lockBodyScroll(): () => void {
   activeLocks += 1;
 
   if (activeLocks === 1) {
-    lockedScrollY = window.scrollY;
-    previousBodyStyles = {
+    previousStyles = {
+      htmlOverflow: document.documentElement.style.overflow,
       overflow: document.body.style.overflow,
-      position: document.body.style.position,
-      top: document.body.style.top,
-      left: document.body.style.left,
-      right: document.body.style.right,
-      width: document.body.style.width,
+      paddingRight: document.body.style.paddingRight,
+      touchAction: document.body.style.touchAction,
+      overscrollBehavior: document.body.style.overscrollBehavior,
     };
 
+    const scrollbarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${lockedScrollY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-    document.body.style.width = '100%';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    document.body.style.touchAction = 'none';
+    document.body.style.overscrollBehavior = 'none';
   }
 
   return () => {
     activeLocks = Math.max(0, activeLocks - 1);
 
-    if (activeLocks > 0 || !previousBodyStyles) {
+    if (activeLocks > 0 || !previousStyles) {
       return;
     }
 
-    document.body.style.overflow = previousBodyStyles.overflow;
-    document.body.style.position = previousBodyStyles.position;
-    document.body.style.top = previousBodyStyles.top;
-    document.body.style.left = previousBodyStyles.left;
-    document.body.style.right = previousBodyStyles.right;
-    document.body.style.width = previousBodyStyles.width;
-
-    const scrollTarget = lockedScrollY;
-    previousBodyStyles = null;
-    window.scrollTo({ top: scrollTarget, left: 0, behavior: 'auto' });
+    document.documentElement.style.overflow = previousStyles.htmlOverflow;
+    document.body.style.overflow = previousStyles.overflow;
+    document.body.style.paddingRight = previousStyles.paddingRight;
+    document.body.style.touchAction = previousStyles.touchAction;
+    document.body.style.overscrollBehavior = previousStyles.overscrollBehavior;
+    previousStyles = null;
   };
 }
