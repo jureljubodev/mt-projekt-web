@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { LegalPolicyType } from './LegalModals';
 import styles from './CookieBanner.module.css';
 import { useSafeMode } from '../../utils/safeMode';
+import { logFreezeDebug } from '../../utils/freezeDebug';
 
 interface CookieBannerProps {
   onOpenPolicy: (policy: LegalPolicyType) => void;
@@ -24,12 +25,19 @@ export default function CookieBanner({ onOpenPolicy }: CookieBannerProps) {
   });
 
   const saveChoice = (choice: CookieChoice) => {
+    logFreezeDebug(`cookie saveChoice ${choice}`);
     try {
       window.localStorage.setItem(COOKIE_KEY, choice);
     } catch {
       // If storage is blocked (e.g. strict/private browser mode), still allow dismissing the banner.
+      logFreezeDebug('cookie saveChoice localStorage blocked');
     }
     setIsVisible(false);
+  };
+
+  const openCookiePolicy = () => {
+    logFreezeDebug('cookie open policy requested');
+    onOpenPolicy('cookies');
   };
 
   if (!isVisible) {
@@ -52,7 +60,7 @@ export default function CookieBanner({ onOpenPolicy }: CookieBannerProps) {
         </div>
 
         <div className={styles.actions}>
-          <button type="button" className="btn btn-outline" onClick={() => onOpenPolicy('cookies')}>
+          <button type="button" className="btn btn-outline" onClick={openCookiePolicy}>
             {t('legal.learnMoreBtn', { defaultValue: 'Learn More' })}
           </button>
           <button type="button" className="btn btn-outline" onClick={() => saveChoice('essential')}>

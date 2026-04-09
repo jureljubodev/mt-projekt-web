@@ -6,6 +6,12 @@ import CookieBanner from '../Legal/CookieBanner';
 import LegalModals, { type LegalPolicyType } from '../Legal/LegalModals';
 import styles from './Layout.module.css';
 import { useSafeMode } from '../../utils/safeMode';
+import {
+  clearFreezeDebugLines,
+  logFreezeDebug,
+  readFreezeDebugLines,
+  setFreezeDebugEnabled,
+} from '../../utils/freezeDebug';
 
 function hasDebugFreezeFlag(search: string, hash: string): boolean {
   const fromSearch = new URLSearchParams(search).get('debugFreeze') === '1';
@@ -78,6 +84,7 @@ export default function Layout() {
 
   useEffect(() => {
     const debugEnabled = hasDebugFreezeFlag(location.search, window.location.hash);
+    setFreezeDebugEnabled(debugEnabled);
 
     if (!debugEnabled) {
       setDebugLines([]);
@@ -85,64 +92,48 @@ export default function Layout() {
       return;
     }
 
-    const pushLine = (line: string) => {
-      const time = new Date().toISOString().slice(11, 19);
-      setDebugLines((prev) => [`${time} ${line}`, ...prev].slice(0, 14));
-    };
-
-    const describeTarget = (target: EventTarget | null): string => {
-      if (!(target instanceof Element)) {
-        return 'unknown';
-      }
-
-      const tag = target.tagName.toLowerCase();
-      const id = target.id ? `#${target.id}` : '';
-      const cls = typeof target.className === 'string' && target.className
-        ? `.${target.className.split(/\s+/).slice(0, 2).join('.')}`
-        : '';
-
-      return `${tag}${id}${cls}`;
-    };
+    setDebugLines(readFreezeDebugLines());
+    const syncInterval = window.setInterval(() => {
+      setDebugLines(readFreezeDebugLines());
+    }, 700);
 
     const onError = (event: ErrorEvent) => {
-      pushLine(`error ${event.message || 'unknown error'}`);
+      logFreezeDebug(`error ${event.message || 'unknown error'}`);
     };
 
     const onUnhandledRejection = (event: PromiseRejectionEvent) => {
-      const reason = typeof event.reason === 'string' ? event.reason : JSON.stringify(event.reason);
-      pushLine(`rejection ${reason || 'unknown rejection'}`);
-    };
-
-    const onTouchStart = (event: TouchEvent) => {
-      pushLine(`touchstart ${describeTarget(event.target)}`);
-    };
-
-    const onClick = (event: MouseEvent) => {
-      pushLine(`click ${describeTarget(event.target)}`);
+      let reason = 'unknown rejection';
+      if (typeof event.reason === 'string') {
+        reason = event.reason;
+      } else {
+        try {
+          reason = JSON.stringify(event.reason);
+        } catch {
+          reason = String(event.reason);
+        }
+      }
+      logFreezeDebug(`rejection ${reason}`);
     };
 
     const onVisibilityChange = () => {
-      pushLine(`visibility ${document.visibilityState}`);
+      logFreezeDebug(`visibility ${document.visibilityState}`);
     };
 
     const onPageHide = () => {
-      pushLine('pagehide');
+      logFreezeDebug('pagehide');
     };
 
     window.addEventListener('error', onError);
     window.addEventListener('unhandledrejection', onUnhandledRejection);
-    document.addEventListener('touchstart', onTouchStart, { passive: true });
-    document.addEventListener('click', onClick, true);
     document.addEventListener('visibilitychange', onVisibilityChange);
     window.addEventListener('pagehide', onPageHide);
 
-    pushLine('debugFreeze enabled');
+    logFreezeDebug('debugFreeze enabled');
 
     return () => {
+      window.clearInterval(syncInterval);
       window.removeEventListener('error', onError);
       window.removeEventListener('unhandledrejection', onUnhandledRejection);
-      document.removeEventListener('touchstart', onTouchStart);
-      document.removeEventListener('click', onClick, true);
       document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('pagehide', onPageHide);
     };
@@ -176,6 +167,20 @@ export default function Layout() {
 
           {debugOpen && (
             <div className={styles.debugPanel} role="status" aria-live="polite">
+              <div className={styles.debugPanelActions}>
+                <button
+                  type="button"
+                  className={styles.debugClearBtn}
+                  onClick={() => {
+                    clearFreezeDebugLines();
+                    setDebugLines([]);
+                    logFreezeDebug('debug logs cleared');
+                  }}
+                >
+                  Clear logs
+                </button>
+              </div>
+
               {debugLines.length === 0 ? (
                 <p>Waiting for events...</p>
               ) : (

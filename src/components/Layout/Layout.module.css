@@ -70,6 +70,22 @@
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
+.debugPanelActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.35rem;
+}
+
+.debugClearBtn {
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  border-radius: 6px;
+  background: rgba(15, 27, 45, 0.9);
+  color: #fff;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.4rem;
+}
+
 .debugPanel p {
   margin: 0;
   font-size: 0.68rem;

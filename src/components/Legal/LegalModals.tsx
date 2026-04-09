@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './LegalModals.module.css';
 import { lockBodyScroll } from '../../utils/scrollLock';
+import { logFreezeDebug } from '../../utils/freezeDebug';
 
 export type LegalPolicyType = 'privacy' | 'terms' | 'cookies';
 
@@ -18,6 +19,8 @@ export default function LegalModals({ activePolicy, onClose }: LegalModalsProps)
       return;
     }
 
+    logFreezeDebug(`legal modal open ${activePolicy}`);
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose();
@@ -29,6 +32,7 @@ export default function LegalModals({ activePolicy, onClose }: LegalModalsProps)
 
     return () => {
       document.removeEventListener('keydown', onKeyDown);
+      logFreezeDebug(`legal modal close ${activePolicy}`);
       unlockScroll();
     };
   }, [activePolicy, onClose]);

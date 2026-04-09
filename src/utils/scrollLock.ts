@@ -7,6 +7,8 @@ let previousStyles: {
   overscrollBehavior: string;
 } | null = null;
 
+import { logFreezeDebug } from './freezeDebug';
+
 function shouldBypassScrollLock(): boolean {
   const ua = navigator.userAgent;
   const isIOS = /iP(ad|hone|od)/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -20,10 +22,12 @@ function shouldBypassScrollLock(): boolean {
 
 export function lockBodyScroll(): () => void {
   if (shouldBypassScrollLock()) {
+    logFreezeDebug('scrollLock bypassed on touch/iOS');
     return () => {};
   }
 
   activeLocks += 1;
+  logFreezeDebug(`scrollLock request activeLocks=${activeLocks}`);
 
   if (activeLocks === 1) {
     previousStyles = {
@@ -47,6 +51,7 @@ export function lockBodyScroll(): () => void {
 
   return () => {
     activeLocks = Math.max(0, activeLocks - 1);
+    logFreezeDebug(`scrollLock release activeLocks=${activeLocks}`);
 
     if (activeLocks > 0 || !previousStyles) {
       return;

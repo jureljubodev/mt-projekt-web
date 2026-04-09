@@ -6,6 +6,7 @@ import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import { useSafeMode } from '../../utils/safeMode';
 import { subscribeToMediaQuery } from '../../utils/mediaQuery';
 import { lockBodyScroll } from '../../utils/scrollLock';
+import { logFreezeDebug } from '../../utils/freezeDebug';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -30,6 +31,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
+    logFreezeDebug('menu close on route change');
   }, [location.pathname]);
 
   useEffect(() => {
@@ -37,10 +39,26 @@ export default function Navbar() {
       return;
     }
 
+    logFreezeDebug('menu open -> lockBodyScroll start');
     return lockBodyScroll();
   }, [menuOpen, safeMode]);
 
-  const closeMenu = () => setMenuOpen(false);
+  useEffect(() => {
+    logFreezeDebug(`menu state ${menuOpen ? 'open' : 'closed'}`);
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    logFreezeDebug('menu close requested');
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => {
+      const next = !prev;
+      logFreezeDebug(`menu toggle ${prev ? 'open' : 'closed'} -> ${next ? 'open' : 'closed'}`);
+      return next;
+    });
+  };
 
   const navLinks = [
     { to: '/',        label: t('nav.home') },
@@ -90,7 +108,7 @@ export default function Navbar() {
             <button
               type="button"
               className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
-              onClick={() => setMenuOpen((prev) => !prev)}
+              onClick={toggleMenu}
               aria-label={menuOpen ? 'Zatvori meni' : 'Otvori meni'}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
