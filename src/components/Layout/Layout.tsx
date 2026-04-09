@@ -9,6 +9,8 @@ import { useSafeMode } from '../../utils/safeMode';
 
 export default function Layout() {
   const [activePolicy, setActivePolicy] = useState<LegalPolicyType | null>(null);
+  const [debugOpen, setDebugOpen] = useState(false);
+  const [debugLines, setDebugLines] = useState<string[]>([]);
   const location = useLocation();
   const safeMode = useSafeMode();
   const handleOpenPolicy = useCallback((policy: LegalPolicyType) => {
@@ -59,6 +61,81 @@ export default function Layout() {
     };
   }, [location.pathname, location.hash]);
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const debugEnabled = params.get('debugFreeze') === '1';
+
+    if (!debugEnabled) {
+      setDebugLines([]);
+      setDebugOpen(false);
+      return;
+    }
+
+    const pushLine = (line: string) => {
+      const time = new Date().toISOString().slice(11, 19);
+      setDebugLines((prev) => [`${time} ${line}`, ...prev].slice(0, 14));
+    };
+
+    const describeTarget = (target: EventTarget | null): string => {
+      if (!(target instanceof Element)) {
+        return 'unknown';
+      }
+
+      const tag = target.tagName.toLowerCase();
+      const id = target.id ? `#${target.id}` : '';
+      const cls = typeof target.className === 'string' && target.className
+        ? `.${target.className.split(/\s+/).slice(0, 2).join('.')}`
+        : '';
+
+      return `${tag}${id}${cls}`;
+    };
+
+    const onError = (event: ErrorEvent) => {
+      pushLine(`error ${event.message || 'unknown error'}`);
+    };
+
+    const onUnhandledRejection = (event: PromiseRejectionEvent) => {
+      const reason = typeof event.reason === 'string' ? event.reason : JSON.stringify(event.reason);
+      pushLine(`rejection ${reason || 'unknown rejection'}`);
+    };
+
+    const onTouchStart = (event: TouchEvent) => {
+      pushLine(`touchstart ${describeTarget(event.target)}`);
+    };
+
+    const onClick = (event: MouseEvent) => {
+      pushLine(`click ${describeTarget(event.target)}`);
+    };
+
+    const onVisibilityChange = () => {
+      pushLine(`visibility ${document.visibilityState}`);
+    };
+
+    const onPageHide = () => {
+      pushLine('pagehide');
+    };
+
+    window.addEventListener('error', onError);
+    window.addEventListener('unhandledrejection', onUnhandledRejection);
+    document.addEventListener('touchstart', onTouchStart, { passive: true });
+    document.addEventListener('click', onClick, true);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    window.addEventListener('pagehide', onPageHide);
+
+    pushLine('debugFreeze enabled');
+
+    return () => {
+      window.removeEventListener('error', onError);
+      window.removeEventListener('unhandledrejection', onUnhandledRejection);
+      document.removeEventListener('touchstart', onTouchStart);
+      document.removeEventListener('click', onClick, true);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      window.removeEventListener('pagehide', onPageHide);
+    };
+  }, [location.search]);
+
+  const debugEnabled = new URLSearchParams(location.search).get('debugFreeze') === '1';
+
   return (
     <div className={styles.layout}>
       <Navbar />
@@ -70,6 +147,30 @@ export default function Layout() {
       <Footer onOpenPolicy={handleOpenPolicy} />
       <CookieBanner onOpenPolicy={handleOpenPolicy} />
       <LegalModals activePolicy={activePolicy} onClose={handleClosePolicy} />
+
+      {debugEnabled && (
+        <div className={styles.debugWrap}>
+          <button
+            type="button"
+            className={styles.debugToggle}
+            onClick={() => setDebugOpen((prev) => !prev)}
+            aria-expanded={debugOpen}
+            aria-label="Toggle runtime debug panel"
+          >
+            DBG {debugLines.length}
+          </button>
+
+          {debugOpen && (
+            <div className={styles.debugPanel} role="status" aria-live="polite">
+              {debugLines.length === 0 ? (
+                <p>Waiting for events...</p>
+              ) : (
+                debugLines.map((line) => <p key={line}>{line}</p>)
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

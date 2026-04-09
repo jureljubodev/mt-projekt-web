@@ -26,13 +26,41 @@ export default function LangSwitcher() {
   const current = LANGUAGES.find(l => l.code === currentCode) ?? LANGUAGES[0];
 
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
+    function handlePointerOutside(event: PointerEvent | MouseEvent | TouchEvent) {
+      const target = event.target;
+      if (!(target instanceof Node)) {
+        return;
+      }
+
+      if (ref.current && !ref.current.contains(target)) {
         setOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    }
+
+    if ('PointerEvent' in window) {
+      document.addEventListener('pointerdown', handlePointerOutside, true);
+    } else {
+      document.addEventListener('mousedown', handlePointerOutside, true);
+      document.addEventListener('touchstart', handlePointerOutside, true);
+    }
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      if ('PointerEvent' in window) {
+        document.removeEventListener('pointerdown', handlePointerOutside, true);
+      } else {
+        document.removeEventListener('mousedown', handlePointerOutside, true);
+        document.removeEventListener('touchstart', handlePointerOutside, true);
+      }
+      document.removeEventListener('keydown', handleEscape);
+    };
   }, []);
 
   async function select(code: string) {
@@ -44,6 +72,7 @@ export default function LangSwitcher() {
   return (
     <div className={styles.wrapper} ref={ref}>
       <button
+        type="button"
         className={styles.trigger}
         onClick={() => setOpen(o => !o)}
         aria-haspopup="listbox"

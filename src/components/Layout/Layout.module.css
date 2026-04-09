@@ -37,3 +37,46 @@
     animation: none;
   }
 }
+
+.debugWrap {
+  position: fixed;
+  right: 0.7rem;
+  bottom: 5.2rem;
+  z-index: 3000;
+  display: grid;
+  gap: 0.35rem;
+  justify-items: end;
+}
+
+.debugToggle {
+  padding: 0.32rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(201, 168, 76, 0.65);
+  background: rgba(15, 27, 45, 0.95);
+  color: #fff;
+  font-size: 0.66rem;
+  letter-spacing: 0.07em;
+}
+
+.debugPanel {
+  width: min(88vw, 350px);
+  max-height: 45vh;
+  overflow: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(7, 14, 25, 0.96);
+  color: #fff;
+  padding: 0.5rem 0.55rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.debugPanel p {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.debugPanel p + p {
+  margin-top: 0.28rem;
+}
