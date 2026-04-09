@@ -6,7 +6,6 @@ import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import { useSafeMode } from '../../utils/safeMode';
 import { subscribeToMediaQuery } from '../../utils/mediaQuery';
 import { lockBodyScroll } from '../../utils/scrollLock';
-import { logFreezeDebug } from '../../utils/freezeDebug';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -42,7 +41,6 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
-    logFreezeDebug('menu close on route change');
   }, [location.pathname]);
 
   useEffect(() => {
@@ -50,25 +48,15 @@ export default function Navbar() {
       return;
     }
 
-    logFreezeDebug('menu open -> lockBodyScroll start');
     return lockBodyScroll();
   }, [menuOpen, compactNav]);
 
-  useEffect(() => {
-    logFreezeDebug(`menu state ${menuOpen ? 'open' : 'closed'}`);
-  }, [menuOpen]);
-
   const closeMenu = () => {
-    logFreezeDebug('menu close requested');
     setMenuOpen(false);
   };
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => {
-      const next = !prev;
-      logFreezeDebug(`menu toggle ${prev ? 'open' : 'closed'} -> ${next ? 'open' : 'closed'}`);
-      return next;
-    });
+    setMenuOpen((prev) => !prev);
   };
 
   const navLinks = [
