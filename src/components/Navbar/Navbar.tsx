@@ -12,8 +12,10 @@ export default function Navbar() {
   const { t } = useTranslation();
   const location = useLocation();
   const safeMode = useSafeMode();
+  const [touchSafe, setTouchSafe] = useState(() => window.matchMedia('(pointer: coarse)').matches);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const compactNav = safeMode || touchSafe;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -30,18 +32,27 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    return subscribeToMediaQuery('(pointer: coarse)', (isCoarse) => {
+      setTouchSafe(isCoarse);
+      if (isCoarse) {
+        setMenuOpen(false);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     setMenuOpen(false);
     logFreezeDebug('menu close on route change');
   }, [location.pathname]);
 
   useEffect(() => {
-    if (safeMode || !menuOpen) {
+    if (compactNav || !menuOpen) {
       return;
     }
 
     logFreezeDebug('menu open -> lockBodyScroll start');
     return lockBodyScroll();
-  }, [menuOpen, safeMode]);
+  }, [menuOpen, compactNav]);
 
   useEffect(() => {
     logFreezeDebug(`menu state ${menuOpen ? 'open' : 'closed'}`);
@@ -69,7 +80,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`${styles.navbar} ${scrolled || safeMode ? styles.scrolled : ''} ${safeMode ? styles.safeMode : ''}`}>
+      <header className={`${styles.navbar} ${scrolled || compactNav ? styles.scrolled : ''} ${compactNav ? styles.safeMode : ''}`}>
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
           <Link to="/" className={styles.logo} onClick={closeMenu}>
@@ -104,7 +115,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {!safeMode && (
+          {!compactNav && (
             <button
               type="button"
               className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
@@ -120,7 +131,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {!safeMode && menuOpen && (
+        {!compactNav && menuOpen && (
           <div id="mobile-menu" className={styles.mobileMenu}>
             <div className="container">
               <div className={styles.mobileLang}>
@@ -149,7 +160,7 @@ export default function Navbar() {
           </div>
         )}
 
-        {safeMode && (
+        {compactNav && (
           <div className={styles.safeNavRow}>
             <div className="container">
               <ul className={styles.safeNavList}>
