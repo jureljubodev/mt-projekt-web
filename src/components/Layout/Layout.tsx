@@ -7,6 +7,21 @@ import LegalModals, { type LegalPolicyType } from '../Legal/LegalModals';
 import styles from './Layout.module.css';
 import { useSafeMode } from '../../utils/safeMode';
 
+function hasDebugFreezeFlag(search: string, hash: string): boolean {
+  const fromSearch = new URLSearchParams(search).get('debugFreeze') === '1';
+  if (fromSearch) {
+    return true;
+  }
+
+  const queryIndex = hash.indexOf('?');
+  if (queryIndex === -1) {
+    return false;
+  }
+
+  const hashQuery = hash.slice(queryIndex + 1);
+  return new URLSearchParams(hashQuery).get('debugFreeze') === '1';
+}
+
 export default function Layout() {
   const [activePolicy, setActivePolicy] = useState<LegalPolicyType | null>(null);
   const [debugOpen, setDebugOpen] = useState(false);
@@ -62,8 +77,7 @@ export default function Layout() {
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const debugEnabled = params.get('debugFreeze') === '1';
+    const debugEnabled = hasDebugFreezeFlag(location.search, window.location.hash);
 
     if (!debugEnabled) {
       setDebugLines([]);
@@ -132,9 +146,9 @@ export default function Layout() {
       document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('pagehide', onPageHide);
     };
-  }, [location.search]);
+  }, [location.search, location.pathname]);
 
-  const debugEnabled = new URLSearchParams(location.search).get('debugFreeze') === '1';
+  const debugEnabled = hasDebugFreezeFlag(location.search, window.location.hash);
 
   return (
     <div className={styles.layout}>
