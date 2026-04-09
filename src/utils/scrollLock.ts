@@ -7,7 +7,22 @@ let previousStyles: {
   overscrollBehavior: string;
 } | null = null;
 
+function shouldBypassScrollLock(): boolean {
+  const ua = navigator.userAgent;
+  const isIOS = /iP(ad|hone|od)/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) {
+    return true;
+  }
+
+  // Some mobile browsers expose body-lock edge cases on touch-only devices.
+  return window.matchMedia('(pointer: coarse)').matches;
+}
+
 export function lockBodyScroll(): () => void {
+  if (shouldBypassScrollLock()) {
+    return () => {};
+  }
+
   activeLocks += 1;
 
   if (activeLocks === 1) {
