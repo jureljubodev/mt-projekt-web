@@ -8,6 +8,7 @@ import styles from './Layout.module.css';
 import { useSafeMode } from '../../utils/safeMode';
 import {
   clearFreezeDebugLines,
+  getFreezeDebugTransportInfo,
   logFreezeDebug,
   readFreezeDebugLines,
   setFreezeDebugEnabled,
@@ -30,8 +31,9 @@ function hasDebugFreezeFlag(search: string, hash: string): boolean {
 
 export default function Layout() {
   const [activePolicy, setActivePolicy] = useState<LegalPolicyType | null>(null);
-  const [debugOpen, setDebugOpen] = useState(false);
+  const [debugOpen, setDebugOpen] = useState(true);
   const [debugLines, setDebugLines] = useState<string[]>([]);
+  const [debugTransport, setDebugTransport] = useState('');
   const location = useLocation();
   const safeMode = useSafeMode();
   const handleOpenPolicy = useCallback((policy: LegalPolicyType) => {
@@ -89,9 +91,12 @@ export default function Layout() {
     if (!debugEnabled) {
       setDebugLines([]);
       setDebugOpen(false);
+      setDebugTransport('');
       return;
     }
 
+    setDebugOpen(true);
+    setDebugTransport(getFreezeDebugTransportInfo());
     setDebugLines(readFreezeDebugLines());
     const syncInterval = window.setInterval(() => {
       setDebugLines(readFreezeDebugLines());
@@ -167,6 +172,7 @@ export default function Layout() {
 
           {debugOpen && (
             <div className={styles.debugPanel} role="status" aria-live="polite">
+              <p className={styles.debugTransport}>{debugTransport}</p>
               <div className={styles.debugPanelActions}>
                 <button
                   type="button"

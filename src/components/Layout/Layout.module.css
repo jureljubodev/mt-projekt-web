@@ -76,6 +76,12 @@
   margin-bottom: 0.35rem;
 }
 
+.debugTransport {
+  margin: 0 0 0.35rem;
+  font-size: 0.62rem;
+  color: rgba(232, 213, 163, 0.95);
+}
+
 .debugClearBtn {
   border: 1px solid rgba(201, 168, 76, 0.5);
   border-radius: 6px;
