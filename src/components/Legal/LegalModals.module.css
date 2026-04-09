@@ -9,6 +9,10 @@
   padding: 1.25rem;
 }
 
+:global(body[data-touch-safe='1']) .overlay {
+  backdrop-filter: none;
+}
+
 .modal {
   position: relative;
   width: min(760px, 100%);

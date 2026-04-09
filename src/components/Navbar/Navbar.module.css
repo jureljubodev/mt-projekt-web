@@ -263,3 +263,12 @@
     display: none;
   }
 }
+
+:global(body[data-touch-safe='1']) .navbar {
+  position: static;
+}
+
+:global(body[data-touch-safe='1']) .mobileMenu {
+  position: static;
+  box-shadow: none;
+}

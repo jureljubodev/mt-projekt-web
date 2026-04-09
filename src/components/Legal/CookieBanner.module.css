@@ -11,6 +11,14 @@
   margin: 0.75rem var(--section-px);
 }
 
+:global(body[data-touch-safe='1']) .banner {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: 0.75rem var(--section-px);
+}
+
 .inner {
   max-width: var(--container-max);
   margin-inline: auto;

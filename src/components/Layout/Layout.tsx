@@ -45,8 +45,13 @@ export default function Layout() {
 
   useEffect(() => {
     document.body.setAttribute('data-safe-mode', safeMode ? '1' : '0');
+
+    const touchSafe = window.matchMedia('(pointer: coarse)').matches;
+    document.body.setAttribute('data-touch-safe', touchSafe ? '1' : '0');
+
     return () => {
       document.body.removeAttribute('data-safe-mode');
+      document.body.removeAttribute('data-touch-safe');
     };
   }, [safeMode]);
 
@@ -101,6 +106,35 @@ export default function Layout() {
     const syncInterval = window.setInterval(() => {
       setDebugLines(readFreezeDebugLines());
     }, 700);
+    const heartbeatInterval = window.setInterval(() => {
+      logFreezeDebug('hb');
+    }, 2500);
+
+    const describeInteractiveTarget = (eventTarget: EventTarget | null): string => {
+      if (!(eventTarget instanceof Element)) {
+        return 'unknown';
+      }
+
+      const interactive = eventTarget.closest('button, a, [role="button"]');
+      if (!interactive) {
+        return eventTarget.tagName.toLowerCase();
+      }
+
+      const tag = interactive.tagName.toLowerCase();
+      const aria = interactive.getAttribute('aria-label');
+      const id = interactive.id;
+
+      if (aria) {
+        return `${tag}:${aria}`;
+      }
+
+      if (id) {
+        return `${tag}#${id}`;
+      }
+
+      const text = (interactive.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 36);
+      return text ? `${tag}:${text}` : tag;
+    };
 
     const onError = (event: ErrorEvent) => {
       logFreezeDebug(`error ${event.message || 'unknown error'}`);
@@ -128,19 +162,32 @@ export default function Layout() {
       logFreezeDebug('pagehide');
     };
 
+    const onPointerDownCapture = (event: Event) => {
+      logFreezeDebug(`pointerdown ${describeInteractiveTarget(event.target)}`);
+    };
+
+    const onClickCapture = (event: Event) => {
+      logFreezeDebug(`click ${describeInteractiveTarget(event.target)}`);
+    };
+
     window.addEventListener('error', onError);
     window.addEventListener('unhandledrejection', onUnhandledRejection);
     document.addEventListener('visibilitychange', onVisibilityChange);
     window.addEventListener('pagehide', onPageHide);
+    document.addEventListener('pointerdown', onPointerDownCapture, true);
+    document.addEventListener('click', onClickCapture, true);
 
     logFreezeDebug('debugFreeze enabled');
 
     return () => {
       window.clearInterval(syncInterval);
+      window.clearInterval(heartbeatInterval);
       window.removeEventListener('error', onError);
       window.removeEventListener('unhandledrejection', onUnhandledRejection);
       document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('pagehide', onPageHide);
+      document.removeEventListener('pointerdown', onPointerDownCapture, true);
+      document.removeEventListener('click', onClickCapture, true);
     };
   }, [location.search, location.pathname]);
 
